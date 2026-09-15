@@ -64,3 +64,22 @@ footer {
     border-radius: 5px;
     transition: all 0.3s ease;
 }   
+
+.about-us {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background: #1a1a1a;
+    border-radius: 15px;
+}
+
+.about-us h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+}
