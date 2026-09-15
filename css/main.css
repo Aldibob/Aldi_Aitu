@@ -1,0 +1,44 @@
+#greetings {
+    color: #ff69b4;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+header  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header a{
+    display: inline-block;
+    text-decoration: none;
+    color: pink;
+    padding: 10px;
+}
+
+
+
+main {
+    background-color: green;
+}
+
+.page-shell {
+
+    background: gray
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.profile{
+    justify-self: right;
+}
+
+
