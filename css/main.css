@@ -26,7 +26,7 @@ main {
 
 .page-shell {
 
-    background: gray
+    background: white;
 }
 
 .logo {
@@ -39,6 +39,13 @@ main {
 
 .profile{
     justify-self: right;
+}
+
+footer {
+    display: block;
+    text-decoration: none;
+    color: pink;
+    padding: 10px;
 }
 
 
