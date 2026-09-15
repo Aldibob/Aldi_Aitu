@@ -12,11 +12,32 @@ body.oregairu {
         color:black;
         font: size 40px;
     }
+    .authors1 {
+        position: fixed;
+        bottom: 20px;
+        right: 35px;
+        color:lightpink;
+        font-family: 'Monospace', monospace;
+    }
 }
 body.anime-collections {
-    background-image: url("../src/168847-anime-anime_devushka-anime_art-multfilm-druzya_anime_braziliya-1920x1080.jpg");
+    background-image: url("../src/wall.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    h1 {
+        text-align: left;
+        margin-left: 300px;
+        color:blueviolet;
+        font-family:"Comic Sans MS", cursive, sans-serif;
+        font: size 300px;
+    }
+    .authors {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color:white;
+        font-family:'Times New Roman', Times, serif;
+    }
 }
