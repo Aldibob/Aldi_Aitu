@@ -17,6 +17,20 @@ body {
     height: auto;
 }
 
+#message {
+    display: block;
+    margin-top: 5px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;  
+    object-fit: contain;
+    border-radius: 50%; 
+    background-color: blue;
+    display: block;
+}
+
 header  {
     width: 100%;
     display: grid;
@@ -30,21 +44,6 @@ header a{
     padding: 10px;
 }
 
-main.Bleach_manga a{
-    width: 100%;
-    display: grid;
-    color: pink;
-    size: 20px;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    border-radius: 10px;
-    margin: 0 auto;
-}
-
 .profile{
     justify-self: right;
 }
@@ -53,7 +52,7 @@ footer {
     display: block;
     text-decoration: none;
     color: pink;
-    padding: 10px;
+    padding: 5px;
 }
 
 .button {
