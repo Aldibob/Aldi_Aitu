@@ -1,3 +1,22 @@
+body {
+    background-image: url("../src/background_for_anime_website.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.manga-reader {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.manga-reader img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 header  {
     width: 100%;
     display: grid;
@@ -11,15 +30,11 @@ header a{
     padding: 10px;
 }
 
-
-
-main {
-    background-color: white;
-}
-
-.page-shell {
-
-    background: white;
+main.Bleach_manga a{
+    width: 100%;
+    display: grid;
+    color: pink;
+    size: 20px;
 }
 
 .logo {
