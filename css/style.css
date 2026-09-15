@@ -14,8 +14,12 @@ oregairu-header {
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 30px;
-    width: 100%;
-    box-sizing: border-box;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    text-decoration: none;
 }
 .logo {
     width: 60px;
@@ -23,6 +27,12 @@ oregairu-header {
     object-fit: contain;
     border-radius: 50%; 
     display: block;
+}
+.site-name {
+    color: #8a2be2;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 .navigation ul {
     list-style: none;
