@@ -4,6 +4,44 @@ body.oregairu {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    ul { list-style: none;
+    margin: 0;
+    padding: 0;
+}
+oregairu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.logo {
+    width: 60px;
+    height: 60px;  
+    object-fit: contain;
+    border-radius: 50%; 
+    display: block;
+}
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.navigation a:hover {
+    color: tomato;
+}
     h2 {
         color:pink;
         font-size: 30px;
