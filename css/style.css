@@ -4,6 +4,14 @@ body.oregairu {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    h2 {
+        color:pink;
+        font: size 60px;
+    }
+    p {
+        color:black;
+        font: size 40px;
+    }
 }
 body.anime-collections {
     background-image: url("../src/168847-anime-anime_devushka-anime_art-multfilm-druzya_anime_braziliya-1920x1080.jpg");
