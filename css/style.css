@@ -6,16 +6,16 @@ body.oregairu {
     min-height: 100vh;
     h2 {
         color:pink;
-        font: size 60px;
+        font-size: 30px;
     }
     p {
         color:black;
-        font: size 40px;
+        font-size: 40px;
     }
     .authors1 {
         position: fixed;
-        bottom: 20px;
-        right: 35px;
+        bottom: 5px;
+        right: 20px;
         color:lightpink;
         font-family: 'Monospace', monospace;
     }
@@ -28,16 +28,17 @@ body.anime-collections {
     min-height: 100vh;
     h1 {
         text-align: left;
-        margin-left: 300px;
+        margin-left: 200px;
         color:blueviolet;
         font-family:"Comic Sans MS", cursive, sans-serif;
-        font: size 300px;
+        font-size: 50px;
     }
+}
+
     .authors {
         position: fixed;
         bottom: 20px;
         right: 20px;
         color:white;
-        font-family:'Times New Roman', Times, serif;
+        font-family:'Monospace', monospace;
     }
-}
