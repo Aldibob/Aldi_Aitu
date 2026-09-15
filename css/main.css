@@ -56,4 +56,12 @@ footer {
     padding: 10px;
 }
 
-
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: pink;
+    padding: 10px;
+    border: 1px solid pink;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}   
