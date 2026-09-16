@@ -2,7 +2,6 @@ body {
     background-image: url("../src/background_for_anime_website.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -34,7 +33,7 @@ body {
 header  {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 header a{
