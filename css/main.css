@@ -1,8 +1,15 @@
 body {
-    background-image: url("../src/background_for_anime_website.png");
+    background-color: #1a1a1a;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+    text-align: center;
 }
 
 .manga-reader {
@@ -31,10 +38,11 @@ body {
 }
 
 header  {
-    background-color: #1a1a1a;
+    background-color: #3f3e3e;
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 header a{
@@ -52,7 +60,8 @@ header a{
 
 .nav {
     display: flex;
-    gap: 5px;
+    font-size: 24px;
+    margin-top: 10px;
 }
 
 .profile{
@@ -62,18 +71,20 @@ header a{
 footer {
     display: block;
     text-decoration: none;
-    color: pink;
+    text-align: center;
+    color: white;
     padding: 5px;
 }
 
 .button {
-    display: inline-block;
-    text-decoration: none;
-    color: rgb(232, 222, 222);
+    margin: auto;
     padding: 10px;
-    border: 1px solid rgb(27, 25, 25);
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    font-size: 20px;
+    height: 50%;
+    width: 60%;
+    background-color: rgb(194, 91, 32);
+    color: white;
+    text-align: center;
 }   
 
 .about-us {
@@ -81,7 +92,7 @@ footer {
     margin: 50px auto;
     padding: 30px;
     text-align: center;
-    background: #1a1a1a;
+    background: rgb(114, 86, 33);
     border-radius: 15px;
 }
 
@@ -93,4 +104,10 @@ footer {
 .about-us p {
     font-size: 18px;
     line-height: 1.6;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 200px;
 }
