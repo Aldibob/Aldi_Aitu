@@ -105,9 +105,3 @@ footer {
     font-size: 18px;
     line-height: 1.6;
 }
-
-.flex-container {
-    display: flex;
-    flex-flow: row wrap;
-    flex: 200px;
-}
