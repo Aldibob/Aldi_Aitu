@@ -51,9 +51,12 @@ header a{
     padding: 10px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
 }
@@ -79,13 +82,13 @@ footer {
 .button {
     margin: auto;
     padding: 10px;
-    font-size: 20px;
+    font-size: 24px;
     height: 50%;
     width: 60%;
-    background-color: rgb(194, 91, 32);
+    background-color: #cb8427;
     color: white;
     text-align: center;
-}   
+}
 
 .about-us {
     max-width: 700px;
@@ -104,4 +107,19 @@ footer {
 .about-us p {
     font-size: 18px;
     line-height: 1.6;
+}
+
+.flex-container {
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.card {
+    padding: 20px;
+    flex-direction: row;
+    text-align: center;
+    flex: 1 100px;
 }
