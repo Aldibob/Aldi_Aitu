@@ -92,6 +92,14 @@
     transform: scale(1.1);
 }
 
+.main-footer {
+    grid-area: footer;
+    background-color: #121216;
+    text-align: center;
+    padding: 15px;
+    color: #a272ff;
+    font-family: Arial, sans-serif;
+}
 
 
 body.oregairu {
@@ -247,15 +255,6 @@ body.anime-collections {
     padding: 30px;
     background-color: rgba(20, 20, 28, 0.7);
     min-height: 100vh;
-}
-
-.main-footer {
-    grid-area: footer;
-    background-color: #121216;
-    text-align: center;
-    padding: 15px;
-    color: #a272ff;
-    font-family: Arial, sans-serif;
 }
 
 .sidebar h3 {
