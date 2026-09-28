@@ -4,54 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-
 </head>
+
 <body>
 
     <header>
-        <a href ="index.html">
-         <img src="src/logo_for_homepage.png" alt="Logo" class="logo">
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="src/logo_for_homepage.png" alt="Logo" class="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <div class="btn-group" role="group" aria-label="Main navigation">
+                <a href="index.html" class="btn btn-primary">Homepage</a>
+                <a href="animecollections.html" class="btn btn-secondary">Anime</a>
+                <a href="mangacollections.html" class="btn btn-outline-light">Manga</a>
+                <a href="bootstrap_page.html" class="btn btn-primary">New page</a>
+            </div>
+            
+    </div>
+
+        <a href="registration.html" class="profile">
+            <img src="src/profile_icon.png" alt="Profile" class="logo">
         </a>
 
-            <nav class="nav">
-                <a href="index.html" class="button">Homepage</a>
-                <a href="animecollections.html" class="button">Anime</a>
-                <a href="mangacollections.html" class="button">Manga</a>
-            </nav>
+    </div>
 
-
-        <a class="profile" href ="index.html" >
-          <img src="src/profile_icon.png" alt="Logo" class="logo">
-        </a>
-    </header>
+            
+    </nav>
+</header>
 
     <main>
-        <h1>Manga Collections</h1>
-        <div class="flex-container">
-            <div class="card">
+        <h1 class="mb-4">
+            Manga Collections
+        </h1>
+        <div class="container py-4">
+
+    <div class="row g-4">
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="manga-card p-2 p-md-3 p-lg-4">
                 <img src="src/bleach_manga_review/bleach_1.jpg" alt="Bleach">
                 <h2>Bleach</h2>
-                <a href="Bleach_manga.html" class="button">Read</a>
-            </div>
-
-            <div class="card">
-                <img src="src/jujutsu_kaisen_manga/kaisen_0.jpg" alt="Jujutsu Kaisen">
-                <h2>Jujutsu Kaisen</h2>
-                <a href="Jujutsu_Kaisen_manga.html" class="button">Read</a>
-            </div>
-
-            <div class="card">
-                <img src="src/hunter_x_hunter_manga/hunter_x_hunter_1.jpg" alt="Hunter x Hunter">
-                <h2>Hunter x Hunter</h2>
-                <a href="hunter_x_hunter.html" class="button">Read</a>
+                <p>Ichigo Kurosaki becoming soul reaper</p>
+                <a href="Bleach_manga.html" class="manga-button">Read</a>
             </div>
         </div>
+
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="manga-card p-2 p-md-3 p-lg-4">
+                <img src="src/jujutsu_kaisen_manga/kaisen_0.jpg" alt="Jujutsu Kaisen">
+                <h2>Jujutsu Kaisen</h2>
+                <p>Itadori Yuji becoming sorcerer</p>
+                <a href="Jujutsu_Kaisen_manga.html" class="manga-button">Read</a>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="manga-card p-2 p-md-3 p-lg-4">
+                <img src="src/hunter_x_hunter_manga/hunter_x_hunter_1.jpg" alt="Hunter x Hunter">
+                <h2>Hunter x Hunter</h2>
+                <p>Gon becoming professional hunter</p>
+                <a href="hunter_x_hunter.html" class="manga-button">Read</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
     </main>
     
     <footer>
             Aldiyar Akhtanov, Aituar Kaliyev
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -4,38 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jujutsu Kaisen Manga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header>
-        <h2>
-        <nav class="nav">
-            <a href="index.html" class="button">Homepage</a>
-            <a href="mangacollections.html" class="button">Manga</a>
-        </nav>
-        </h2>
-    </header>
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="src/logo_for_homepage.png" alt="Logo" class="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <div class="btn-group" role="group" aria-label="Main navigation">
+                <a href="index.html" class="btn btn-primary">Homepage</a>
+                <a href="animecollections.html" class="btn btn-secondary">Anime</a>
+                <a href="mangacollections.html" class="btn btn-outline-light">Manga</a>
+                <a href="bootstrap_page.html" class="btn btn-primary">New page</a>
+            </div>
+            
+    </div>
+
+        <a href="registration.html" class="profile">
+            <img src="src/profile_icon.png" alt="Profile" class="logo">
+        </a>
+
+    </div>
+
+            
+    </nav>
+</header>
 
     <main>
-        <div class="manga-reader">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_2.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_3.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_4.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_5.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_6.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_7.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_8.jpeg">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_9.jpeg">
+        <div id="jujutsuCarousel" class="carousel slide container" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="0"
+                class="active" aria-current="true"></button>
+
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="5"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="6"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="7"></button>
+        <button type="button" data-bs-target="#jujutsuCarousel" data-bs-slide-to="8"></button>
+    </div>
+
+    <!-- Images -->
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 1">
         </div>
-        <h1>
-        <a href="https://mangalib.me/ru/manga/13054--jujutsu-kaisen?section=chapters">Jujutsu Kaisen</a>
-        </h1>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_2.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 2">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_3.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 3">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_4.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 4">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_5.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 5">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_6.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 6">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_7.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 7">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_8.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 8">
+        </div>
+
+        <div class="carousel-item">
+            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_9.jpeg"
+                 class="d-block w-100" alt="Jujutsu Kaisen 9">
+        </div>
+
+    </div>
+
+    <!-- Previous -->
+    <button class="carousel-control-prev" type="button"
+            data-bs-target="#jujutsuCarousel"
+            data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- Next -->
+    <button class="carousel-control-next" type="button"
+            data-bs-target="#jujutsuCarousel"
+            data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
     </main>
 
     <footer>
         <p>By Aldiyar Akhtanov, Aituar Kaliyev</p>
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
