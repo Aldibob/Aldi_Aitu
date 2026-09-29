@@ -69,13 +69,12 @@ a:hover {
 
 .nav {
     display: flex;
+    justify-content: right;
     font-size: 24px;
     margin-top: 10px;
 }
 
-.profile{
-    margin-left: auto;
-}
+
 
 footer {
     display: block;

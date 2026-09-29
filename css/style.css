@@ -92,14 +92,6 @@
     transform: scale(1.1);
 }
 
-.main-footer {
-    grid-area: footer;
-    background-color: #121216;
-    text-align: center;
-    padding: 15px;
-    color: #a272ff;
-    font-family: Arial, sans-serif;
-}
 
 
 body.oregairu {
