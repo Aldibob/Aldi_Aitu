@@ -19,14 +19,14 @@ h1,h2 {
 }
 
 .manga-reader {
-    width: 800px;
+    width: 600px;
     margin: 0 auto;
 }
 
-.manga-reader img {
+.manga-image {
+    width: 60%;
     display: block;
-    width: 100%;
-    height: auto;
+    margin: 0 auto;
 }
 
 #message {
@@ -61,48 +61,12 @@ a:hover {
     text-decoration: none;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-.manga-nav {
-    display: flex;
-    font-size: 24px;
-    margin-top: 10px;
-    margin-left: auto;
-}
-
-.profile{
-    margin-left: center;
-}
-
 footer {
     display: block;
     text-decoration: none;
     text-align: center;
     color: white;
     padding: 5px;
-}
-
-.manga-button {
-    margin: auto;
-    padding: 5px;
-    font-size: auto;
-    height: 50%;
-    width: 60%;
-    background-color: #cb8427;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.manga-button:hover {
-    background-color: #a66b1f;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    transform: scale(1.05);
 }
 
 .about-us {
@@ -122,58 +86,6 @@ footer {
 .about-us p {
     font-size: 18px;
     line-height: 1.6;
-}
-
-.flex-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-}
-
-.manga-card {
-    text-align: center;
-    flex: 1;
-}
-
-.manga-card img {
-    width: 60%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.manga-card p {
-    color:aliceblue;
-    font-size: small;
-}
-
-@media (max-width: 767px) {
-    .flex-container {
-        flex-direction: column;
-    }
-    .manga-card {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .flex-container {
-        flex-flow: row wrap;
-    }
-    .manga-card {
-        flex: 0 0 calc(50% - 10px);
-    }
-}
-
-@media (min-width: 992px) {
-    .flex-container {
-        flex-flow: row nowrap;
-    }
-    .manga-card {
-        flex: 1;
-    }
 }
 
 .responsive-title {
