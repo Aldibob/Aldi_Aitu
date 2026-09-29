@@ -11,10 +11,8 @@
     background-color: rgba(20, 20, 25, 0.95);
     padding: 12px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    width: 100%;
 }
 
-.logo-link, 
 .logo-container {
     display: flex;
     align-items: center;
@@ -22,8 +20,7 @@
     text-decoration: none;
 }
 
-.logo, 
-.logo-img {
+.logo {
    width: 50px;
     height: 50px; 
     object-fit: cover;
@@ -31,23 +28,20 @@
     flex-shrink: 0;
 }
 
-.site-name, 
-.site-title {
+.site-name {
     color: #8a2be2;
     font-size: 22px;
     font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.navigation ul, 
-.main-nav ul {
+.navigation ul {
     display: flex;
     gap: 15px;
     list-style: none;
 }
 
-.nav-button, 
-.main-nav a {
+.nav-button {
     display: inline-block;
     text-decoration: none;
     color: #ffffff;
@@ -61,15 +55,13 @@
     transition: all 0.3s ease;
 }
 
-.nav-button:hover, 
-.main-nav a:hover {
+.nav-button:hover {
     background-color: #8a2be2;
     color: #ffffff;
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
     transform: translateY(-2px);
 }
 
-.profile-link, 
 .profile {
     display: flex;
     align-items: center;
@@ -87,19 +79,29 @@
     border: 2px solid #8a2be2;
 }
 
-.profile-link:hover, 
 .profile:hover {
     transform: scale(1.1);
 }
 
-.main-footer {
-    grid-area: footer;
-    background-color: #121216;
-    text-align: center;
-    padding: 15px;
-    color: #a272ff;
-    font-family: Arial, sans-serif;
+.card-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #8a2be2;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
+.card-btn:hover {
+    background-color:#ff69b4;
+}
+
+
+
+/* Class of page OREGAIRU */
+
 
 
 body.oregairu {
@@ -195,28 +197,10 @@ body.oregairu {
 
 .card-details .card-btn {
     align-self: flex-start; 
-    text-decoration: none;
-    background-color: #8a2be2;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.card-details .card-btn:hover {
-    background-color: #9932cc;
-}
 
-.authors1 {
-    position: fixed;
-    bottom: 5px;
-    right: 20px;
-    color: lightpink;
-    font-family: 'Monospace', monospace;
-}
-
+/* Class for page ANIME-COLLECTIONS */
 
 
 body.anime-collections {
@@ -254,7 +238,6 @@ body.anime-collections {
     grid-area: main;
     padding: 30px;
     background-color: rgba(20, 20, 28, 0.7);
-    min-height: 100vh;
 }
 
 .sidebar h3 {
@@ -265,7 +248,6 @@ body.anime-collections {
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
 }
 
 .sidebar li {
@@ -290,61 +272,6 @@ body.anime-collections {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.grid-card {
-    background-color: rgba(20, 20, 28, 0.90);
-    border: 1px solid rgba(138, 43, 226, 0.4);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.grid-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.5);
-}
-
-.grid-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-
-.grid-card-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
-}
-
-.grid-card-info h4 {
-    color: #ffffff;
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-family: Arial, sans-serif;
-}
-
-.grid-card-info p {
-    color: #aaaaaa;
-    font-size: 12px;
-    margin-bottom: 12px;
-}
-
-.authors {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: white;
-    font-family: 'Monospace', monospace;
-}
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -401,19 +328,4 @@ body.anime-collections {
     color: #cccccc;
     font-size: 14px;
     margin-bottom: 15px;
-}
-
-.gallery-overlay .card-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #8a2be2;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 13px;
-    transition: background-color 0.2s;
-}
-
-.gallery-overlay .card-btn:hover {
-    background-color: #ff69b4;
 }
