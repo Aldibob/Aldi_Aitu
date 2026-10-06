@@ -22,6 +22,7 @@ Jujutsu_Kaisenn.html - read Jujutsu Kaisen!
 
 hunter_x_hunter.html - read hunter!
 
+
 Technologies Used
 
 HTML5
@@ -36,7 +37,35 @@ CSS Media Queries
 
 GitHub Pages
 
+aldi_aitu/
+
+├── index.html
+
+├── animecollections.html
+
+├── oregairu.html
+
+├── mangacollections.html
+
+├── registration.html
+
+├── Bleach_manga.html
+
+├── Jujutsu_Kaisen.html
+
+├── hunter_x_hunter.html
+
+├── css/
+
+│   ├── main.css
+
+│   └── style.css
+
+└── src
+
+│   └── images/
+
 Team Members
-Akhtanov Aldiyar
-Aituar Kaliyev
+Akhtanov Aldiyar,
+Aituar Kaliyev.
 Group: SE-2505
