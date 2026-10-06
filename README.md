@@ -25,10 +25,15 @@ hunter_x_hunter.html - read hunter!
 Technologies Used
 
 HTML5
+
 CSS3
+
 Bootstrap 5
+
 Flexbox
+
 CSS Media Queries
+
 GitHub Pages
 
 Team Members
