@@ -1,4 +1,5 @@
 Hikikomori.lab
+
 Hikikomori.lab is a team project in the field of web technologies.
 You can watch your favorite anime and read manga!
 
