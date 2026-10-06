@@ -13,7 +13,7 @@ oregairu.html — anime "Oregairu"
 
 animecollections.html — page where all available anime are located
 
-mangacollections.html — page where all available manga are located.
+mangacollections.html — page where all available manga are located
 
 registration.html — register your account
 
