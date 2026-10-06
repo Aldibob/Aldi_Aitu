@@ -51,16 +51,6 @@ header  {
     flex-wrap: wrap;
 }
 
-header a{
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
 footer {
     display: block;
     text-decoration: none;
@@ -120,10 +110,6 @@ footer {
         font-size: 22px;
     }
 
-}
-
-header {
-    display: block;
 }
 
 header .navbar {
