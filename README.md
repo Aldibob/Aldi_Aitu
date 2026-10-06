@@ -7,12 +7,19 @@ Live Website
 
 Pages
 index.html — Home page
+
 oregairu.html — anime "Oregairu"
+
 animecollections.html — page where all available anime are located
+
 mangacollections.html — page where all available manga are located.
+
 registration.html — register your account
+
 Bleach_manga.html - read Bleach!
+
 Jujutsu_Kaisenn.html - read Jujutsu Kaisen!
+
 hunter_x_hunter.html - read hunter!
 
 Technologies Used
