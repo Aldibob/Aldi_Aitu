@@ -6,14 +6,9 @@
 
 body {
     background-color: #1a1a1a;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    width: 100%;
 }
 
-h1,h2 {
+h1 {
     text-align: center;
     color: white;
 }
@@ -29,34 +24,22 @@ h1,h2 {
     margin: 0 auto;
 }
 
-#message {
-    display: block;
-    margin-top: 5px;
-}
-
 .logo {
     width: 60px;
     height: 60px;  
     object-fit: contain;
     border-radius: 50%; 
     background-color: blue;
-    display: flex;
 }
 
 header  {
     background-color: #3f3e3e;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 footer {
-    display: block;
-    text-decoration: none;
     text-align: center;
     color: white;
-    padding: 5px;
 }
 
 .about-us {
@@ -116,24 +99,6 @@ header .navbar {
     width: 100%;
 }
 
-header .navbar .container {
-    display: flex;
-    align-items: center;
-}
-
 header .navbar-collapse {
     flex-grow: 0;
-}
-
-header .navbar-nav {
-    margin-left: auto;
-}
-
-header .navbar .profile {
-    margin-left: 15px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    opacity: 1;
 }
