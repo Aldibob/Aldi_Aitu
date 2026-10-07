@@ -1,86 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oregairu - Hikikomori.lab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Oregairu</title>
 </head>
-
 <body class="oregairu">
-    <header class="main-header">
-    <a href="index.html" class="logo-container">
-        <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo">
-        <span class="site-name">Hikikomori.lab</span>
-    </a>
-    <nav class="navigation">
-        <ul>
-            <li><a href="index.html" class="nav-button">Home</a></li>
-            <li><a href="animecollections.html" class="nav-button">Anime Collections</a></li>
-            <li><a href="mangacollections.html" class="nav-button">Manga Collections</a></li>
-        </ul>
-    </nav>
-    <a href="registration.html" class="profile">
-            <img src="src/profile.webp" alt="Profile" class="profile-icon">
-        </a>
-</header>
 
-    <main class="oregairu-main">
+    <header class="main-header p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 px-3 px-sm-4">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand logo-container d-flex align-items-center me-4">
+                    <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo me-2">
+                    <span class="site-name">Hikikomori.lab</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="container py-4">
-            <div class="row g-4">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card h-100">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
+                        <li class="nav-item"><a href="index.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Home</a></li>
+                        <li class="nav-item"><a href="animecollections.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Anime Collections</a></li>
+                        <li class="nav-item"><a href="mangacollections.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Manga Collections</a></li>
+                        <li class="nav-item"><a href="registration.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Categories</a></li>
+                    </ul>
+                    <a href="registration.html" class="profile d-inline-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+                        <img src="src/profile.webp" alt="Profile" class="profile-icon">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-         <div class="content-wrapper">
-            <h1 class="anime-title">My Youth Romantic Comedy Is Wrong, As I Expected</h1>
-        
-        <section class="trailer-block">
-            <h2>Anime Trailer "Oregairu"</h2>
-            <video width="480" controls>
-                <source src="src/Oregairu/oregairutrailer.mp4" type="video/mp4">
-            </video>
+    <main class="oregairu-main container my-4 p-3 p-md-4 rounded bg-dark-overlay">
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="anime-title text-light fw-bold mb-3">My Youth Romantic Comedy Is Wrong, As I Expected</h1>
+                <p class="lead text-light-50 fs-responsive">Welcome to the official detail page for Oregairu. Explore trailers, seasons, screenshot gallery, and discussions.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-12 col-lg-6">
+                <section class="trailer-block p-3 border border-secondary rounded bg-dark">
+                    <h2 class="text-pink mb-3 fs-4">Anime Trailer "Oregairu"</h2>
+                    <div class="ratio ratio-16x9">
+                        <video controls class="rounded">
+                            <source src="src/Oregairu/oregairutrailer.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-between">
+                <div class="p-3 border border-secondary rounded bg-dark h-100">
+                    <h3 class="text-purple mb-3">Overview</h3>
+                    <p class="text-light">Hachiman Hikigaya is an cynical high school student with a pessimistic worldview. When he submits an essay mocking modern social relationships, his teacher forces him to join the Service Club.</p>
+                    
+                    <div class="mt-4">
+                        <p class="text-light mb-2">Actions:</p>
+                        <div class="btn-group w-100 flex-wrap" role="group" aria-label="Anime actions">
+                            <button type="button" class="btn btn-primary btn-md">Add to Watchlist</button>
+                            <button type="button" class="btn btn-outline-info btn-md">Share</button>
+                            <button type="button" class="btn btn-secondary btn-md">Rate 9.0</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-light mb-3 fs-3">Gallery (9 Shots)</h2>
+                <div id="oregairuCarousel" class="carousel slide border border-secondary rounded overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#oregairuCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="src/Oregairu/seas123.jpg" class="d-block w-100 carousel-img" alt="Shot 1"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas12.jpg" class="d-block w-100 carousel-img" alt="Shot 2"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/ep12.webp" class="d-block w-100 carousel-img" alt="Shot 3"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas1234.png" class="d-block w-100 carousel-img" alt="Shot 4"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas22.jpg" class="d-block w-100 carousel-img" alt="Shot 5"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas2.webp" class="d-block w-100 carousel-img" alt="Shot 6"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas3.jpg" class="d-block w-100 carousel-img" alt="Shot 7"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas1.webp" class="d-block w-100 carousel-img" alt="Shot 8"></div>
+                        <div class="carousel-item"><img src="src/Oregairu/seas3.jpg" class="d-block w-100 carousel-img" alt="Shot 9"></div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#oregairuCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#oregairuCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-light mb-3 fs-3">Seasons Overview</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            <div class="col">
+                <div class="card h-100 bg-dark text-light border-purple">
+                    <img src="src/Oregairu/seas1.webp" class="card-img-top card-poster-img" alt="Season 1">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-purple">Season 1</h5>
+                        <p class="card-text flex-grow-1">The Service Club begins its journey with Hachiman Hikigaya and Yukino Yukinoshita as they solve high school problems.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Watch Season 1</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-light border-purple">
+                    <img src="src/Oregairu/seas2pos.jpg" class="card-img-top card-poster-img" alt="Season 2">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-purple">Season 2</h5>
+                        <p class="card-text flex-grow-1">Relationships grow more complex and genuine feelings are tested as members struggle with expectations.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Watch Season 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 bg-dark text-light border-purple">
+                    <img src="src/Oregairu/seas3.jpg" class="card-img-top card-poster-img" alt="Season 3">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-purple">Season 3</h5>
+                        <p class="card-text flex-grow-1">The final chapter approaches as graduation nears. Hachiman, Yukino, and Yui must find a genuine answer.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Watch Season 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="p-4 bg-dark border border-secondary rounded mb-4">
+            <h3 class="text-pink mb-3">Leave a Review / Request</h3>
+            <form>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <label for="userName" class="form-label text-light">Name</label>
+                        <input type="text" class="form-control bg-secondary text-white border-0" id="userName" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="userEmail" class="form-label text-light">Email address</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark-purple text-white border-0">@</span>
+                            <input type="email" class="form-control bg-secondary text-white border-0" id="userEmail" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="reviewText" class="form-label text-light">Comment</label>
+                        <textarea class="form-control bg-secondary text-white border-0" id="reviewText" rows="3" placeholder="Write your thoughts..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="subscribeCheck">
+                            <label class="form-check-label text-light" for="subscribeCheck">
+                                Subscribe to updates
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-success btn-lg px-4">Submit Review</button>
+                    </div>
+                </div>
+            </form>
         </section>
 
-        <section class="seasons-cards">
+    </main>
 
-    <div class="card-horizontal">
-        <img src="src/Oregairu/seas1.webp" alt="Season 1" class="card-poster">
-        <div class="card-details">
-            <h3>Season 1</h3>
-            <p>The Service Club begins its journey with Hachiman Hikigaya and Yukino Yukinoshita as they solve various high school problems while facing their own social flaws.</p>
-            <a href="#" class="card-btn">Watch Season 1</a>
-        </div>
-    </div>
-
-    <div class="card-horizontal">
-        <img src="src/Oregairu/seas2.webp" alt="Season 2" class="card-poster">
-        <div class="card-details">
-            <h3>Season 2</h3>
-            <p>Relationships grow more complex and genuine feelings are tested as the club members struggle to understand what they truly want from each other.</p>
-            <a href="#" class="card-btn">Watch Season 2</a>
-        </div>
-    </div>
-
-    <div class="card-horizontal">
-        <img src="src/Oregairu/seas3.jpg" alt="Season 3" class="card-poster">
-        <div class="card-details">
-            <h3>Season 3</h3>
-            <p>The final chapter approaches as graduation near. Hachiman, Yukino, and Yui must confront their unresolved feelings and find a genuine answer.</p>
-            <a href="#" class="card-btn">Watch Season 3</a>
-                     </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
-</main>
-
-    <footer class="main-footer">
-        <p>By Aldiyar Akhtanov, Aituar Kaliyev</p>
+    <footer class="main-footer bg-dark text-light text-center py-4 mt-5 border-top border-secondary">
+        <p class="m-0 px-sm-2 text-secondary">By Aldiyar Akhtanov, Aituar Kaliyev</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

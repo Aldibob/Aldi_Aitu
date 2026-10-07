@@ -4,74 +4,153 @@
     padding: 0;
 }
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(20, 20, 25, 0.95);
-    padding: 12px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+/* ==========================================
+   PART 1: MEDIA QUERIES (Task 1 & Task 2)
+   ========================================== */
+
+/* Task 1: Responsive Typography */
+body {
+    font-size: 14px;
 }
 
-.logo-container {
+h1, .fs-responsive {
+    font-size: 1.5rem;
+}
+
+/* Tablet Media Query */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    h1, .fs-responsive {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop Media Query */
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+    h1, .fs-responsive {
+        font-size: 2.5rem;
+    }
+}
+
+/* Task 2: Card Group using pure CSS Media Queries (NO Bootstrap) */
+.custom-card-group {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.custom-card {
+    background-color: rgba(20, 20, 28, 0.9);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    flex: 1 1 100%; /* Mobile: Stacked vertically (1 per row) */
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.custom-card-body {
+    padding: 15px;
+}
+
+.custom-card-body h4 {
+    color: #a272ff;
+    margin-bottom: 8px;
+}
+
+.custom-card-body p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+/* Tablet: Display two boxes in a row */
+@media (min-width: 576px) and (max-width: 991px) {
+    .custom-card {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+/* Desktop: Display all three side by side */
+@media (min-width: 992px) {
+    .custom-card {
+        flex: 1 1 calc(33.333% - 14px);
+    }
+}
+
+
+/* ==========================================
+   CUSTOM STYLES & BOOTSTRAP OVERRIDES
+   ========================================== */
+
+.bg-dark-overlay {
+    background-color: rgba(15, 15, 22, 0.88);
+}
+
+.text-purple {
+    color: #a272ff !important;
+}
+
+.text-pink {
+    color: #ffb6c1 !important;
+}
+
+.border-purple {
+    border: 1px solid rgba(138, 43, 226, 0.5) !important;
+}
+
+.btn-purple {
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btn-purple:hover {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
+
+.btn-outline-purple {
+    border-color: rgba(138, 43, 226, 0.6);
+}
+
+.btn-outline-purple:hover {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+.bg-dark-purple {
+    background-color: #2b1040;
 }
 
 .logo {
-   width: 50px;
-    height: 50px; 
+    width: 45px;
+    height: 45px;
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0;
 }
 
 .site-name {
     color: #8a2be2;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.navigation ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-.nav-button {
-    display: inline-block;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 8px 16px;
-    border: 1px solid rgba(138, 43, 226, 0.5);
-    border-radius: 6px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #8a2be2;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
-    transform: translateY(-2px);
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
 .profile-icon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #ffffff;
     padding: 2px;
@@ -79,30 +158,20 @@
     border: 2px solid #8a2be2;
 }
 
-.profile:hover {
-    transform: scale(1.1);
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
 }
 
-.card-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #8a2be2;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-.card-btn:hover {
-    background-color:#ff69b4;
+.card-poster-img {
+    height: 260px;
+    object-fit: cover;
 }
 
 
-
-/* Class of page OREGAIRU */
-
-
+/* ==========================================
+   PAGE BACKGROUNDS & LAYOUT
+   ========================================== */
 
 body.oregairu {
     background-image: url("../src/Oregairu/R.jpg");
@@ -112,96 +181,6 @@ body.oregairu {
     background-attachment: fixed;
     min-height: 100vh;
 }
-
-.oregairu-main {
-    padding: 30px;
-}
-
-.content-wrapper {
-    max-width: 1100px;
-}
-
-.anime-title {
-    color: #ffffff;
-    font-size: 28px;
-    font-family: Arial, sans-serif;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.trailer-block h2 {
-    color: #ffb6c1;
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.trailer-block video {
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
-}
-
-.seasons-cards {
-    display: flex;          
-    flex-direction: column; 
-    gap: 20px;            
-    max-width: 680px;        
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-
-.card-horizontal {
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(20, 20, 28, 0.88);
-    border: 1px solid rgba(138, 43, 226, 0.5);
-    border-radius: 12px;
-    overflow: hidden;
-    min-height: 220px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-horizontal:hover {
-    transform: translateX(8px); 
-    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.5);
-}
-
-.card-poster {
-    width: 170px;
-    height: 100%;
-    object-fit: cover;     
-    flex-shrink: 0;        
-}
-
-.card-details {
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-.card-details h3 {
-    color: #a272ff;
-    font-size: 20px;
-    font-family: Arial, sans-serif;
-    margin-bottom: 8px;
-}
-
-.card-details p {
-    color: #e0e0e0;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.card-details .card-btn {
-    align-self: flex-start; 
-}
-
-
-/* Class for page ANIME-COLLECTIONS */
-
 
 body.anime-collections {
     background-image: url("../src/wall.jpg");
@@ -218,9 +197,20 @@ body.anime-collections {
         "header header"
         "sidebar main"
         "footer footer";
-    grid-template-columns: 220px 1fr; 
+    grid-template-columns: 240px 1fr; 
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .site-layout {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
 }
 
 .site-layout .main-header {
@@ -229,54 +219,24 @@ body.anime-collections {
 
 .sidebar {
     grid-area: sidebar;
-    background-color: rgba(15, 15, 22, 0.88);
-    padding: 20px;
+    background-color: rgba(15, 15, 22, 0.92);
     border-right: 1px solid rgba(138, 43, 226, 0.3);
 }
 
 .main-content {
     grid-area: main;
-    padding: 30px;
-    background-color: rgba(20, 20, 28, 0.7);
+    background-color: rgba(20, 20, 28, 0.75);
 }
 
 .sidebar h3 {
     color: #a272ff;
-    margin-bottom: 15px;
     font-family: Arial, sans-serif;
-}
-
-.sidebar ul {
-    list-style: none;
-}
-
-.sidebar li {
-    margin-bottom: 12px;
-}
-
-.sidebar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.sidebar a:hover {
-    color: #ffb6c1;
-}
-
-.main-content h2 {
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 20px;
 }
 
 .gallery-item {
@@ -328,4 +288,20 @@ body.anime-collections {
     color: #cccccc;
     font-size: 14px;
     margin-bottom: 15px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #8a2be2;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #ff69b4;
 }
