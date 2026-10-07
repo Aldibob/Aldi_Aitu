@@ -4,11 +4,6 @@
     padding: 0;
 }
 
-/* ==========================================
-   PART 1: MEDIA QUERIES (Task 1 & Task 2)
-   ========================================== */
-
-/* Task 1: Responsive Typography */
 body {
     font-size: 14px;
 }
@@ -17,7 +12,7 @@ h1, .fs-responsive {
     font-size: 1.5rem;
 }
 
-/* Tablet Media Query */
+
 @media (min-width: 768px) {
     body {
         font-size: 16px;
@@ -27,7 +22,7 @@ h1, .fs-responsive {
     }
 }
 
-/* Desktop Media Query */
+
 @media (min-width: 992px) {
     body {
         font-size: 18px;
@@ -37,7 +32,6 @@ h1, .fs-responsive {
     }
 }
 
-/* Task 2: Card Group using pure CSS Media Queries (NO Bootstrap) */
 .custom-card-group {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +44,7 @@ h1, .fs-responsive {
     border-radius: 10px;
     overflow: hidden;
     color: #fff;
-    flex: 1 1 100%; /* Mobile: Stacked vertically (1 per row) */
+    flex: 1 1 100%; 
     display: flex;
     flex-direction: column;
 }
@@ -76,24 +70,18 @@ h1, .fs-responsive {
     margin-bottom: 12px;
 }
 
-/* Tablet: Display two boxes in a row */
 @media (min-width: 576px) and (max-width: 991px) {
     .custom-card {
         flex: 1 1 calc(50% - 10px);
     }
 }
 
-/* Desktop: Display all three side by side */
 @media (min-width: 992px) {
     .custom-card {
         flex: 1 1 calc(33.333% - 14px);
     }
 }
 
-
-/* ==========================================
-   CUSTOM STYLES & BOOTSTRAP OVERRIDES
-   ========================================== */
 
 .bg-dark-overlay {
     background-color: rgba(15, 15, 22, 0.88);
@@ -168,10 +156,6 @@ h1, .fs-responsive {
     object-fit: cover;
 }
 
-
-/* ==========================================
-   PAGE BACKGROUNDS & LAYOUT
-   ========================================== */
 
 body.oregairu {
     background-image: url("../src/Oregairu/R.jpg");
