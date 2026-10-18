@@ -4,130 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Collections</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="anime-collections">
 
     <div class="site-layout">
         
-        <header class="main-header">
-            <a href="index.html" class="logo-container">
-                <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo">
-                <span class="site-name">Hikikomori.lab</span>
-            </a>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="index.html" class="nav-button">Home</a></li>
-                    <li><a href="animecollections.html" class="nav-button">Anime Collections</a></li>
-                    <li><a href="mangacollections.html" class="nav-button">Manga Collections</a></li>
-                </ul>
+        <header class="main-header p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 px-3 px-sm-4">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand logo-container d-flex align-items-center me-4">
+                        <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo me-2">
+                        <span class="site-name">Hikikomori.lab</span>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollections" aria-controls="navCollections" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navCollections">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
+                            <li class="nav-item"><a href="index.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Home</a></li>
+                            <li class="nav-item"><a href="animecollections.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0 active">Anime Collections</a></li>
+                            <li class="nav-item"><a href="mangacollections.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Manga Collections</a></li>
+                            <li class="nav-item"><a href="registration.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Categories</a></li>
+                        </ul>
+                        <a href="registration.html" class="profile d-inline-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+                            <img src="src/profile.webp" alt="Profile" class="profile-icon">
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <a href="registration.html" class="profile">
-                <img src="src/profile.webp" alt="Profile" class="profile-icon">
-            </a>
         </header>
 
-        <aside class="sidebar">
-            <h3>Quick Menu</h3>
-            <ul>
-                <li><a href="#popular">Popular Anime</a></li>
-                <li><a href="#new">New Releases</a></li>
-                <li><a href="#top">Top Rated</a></li>
+        <aside class="sidebar p-3 p-md-4">
+            <h3 class="mb-3">Quick Menu</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#popular" class="text-light text-decoration-none">Popular Anime</a></li>
+                <li class="nav-item mb-2"><a href="#new" class="text-light text-decoration-none">New Releases</a></li>
+                <li class="nav-item mb-2"><a href="#top" class="text-light text-decoration-none">Top Rated</a></li>
             </ul>
         </aside>
 
-        <main class="main-content">
-    <h2>Anime Gallery</h2>
-    
-    <div class="image-gallery">
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
-            <div class="gallery-overlay">
-                <h3>Oregairu</h3>
-                <p>Romantic Comedy</p>
-                <a href="oregairu.html" class="card-btn">View Details</a>
+        <main class="main-content p-3 p-md-4">
+            <h2 class="mb-4">Featured Collections (Media Queries Demo)</h2>
+            
+            <div class="custom-card-group mb-5">
+                <div class="custom-card">
+                    <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
+                    <div class="custom-card-body">
+                        <h4>Oregairu</h4>
+                        <p>Romantic Comedy / Slice of Life</p>
+                        <a href="oregairu.html" class="btn btn-sm btn-purple">Explore</a>
+                    </div>
+                </div>
+                <div class="custom-card">
+                    <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
+                    <div class="custom-card-body">
+                        <h4>Bleach</h4>
+                        <p>Action / Supernatural</p>
+                        <a href="Bleach_manga.html" class="btn btn-sm btn-purple">Explore</a>
+                    </div>
+                </div>
+                <div class="custom-card">
+                    <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
+                    <div class="custom-card-body">
+                        <h4>Hunter x Hunter</h4>
+                        <p>Adventure / Fantasy</p>
+                        <a href="hunter_x_hunter.html" class="btn btn-sm btn-purple">Explore</a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="gallery-item">
-            <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
-            <div class="gallery-overlay">
-                <h3>Bleach</h3>
-                <p>Action / Supernatural</p>
-                <a href="Bleach_manga.html" class="card-btn">View Details</a>
+            <h2>Anime Gallery</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
+                    <div class="gallery-overlay">
+                        <h3>Oregairu</h3>
+                        <p>Romantic Comedy</p>
+                        <a href="oregairu.html" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
+                    <div class="gallery-overlay">
+                        <h3>Bleach</h3>
+                        <p>Action / Supernatural</p>
+                        <a href="Bleach_manga.html" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
+                    <div class="gallery-overlay">
+                        <h3>Hunter x Hunter</h3>
+                        <p>Adventure / Fantasy</p>
+                        <a href="hunter_x_hunter.html" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
+                    <div class="gallery-overlay">
+                        <h3>Jujutsu Kaisen</h3>
+                        <p>Dark Fantasy</p>
+                        <a href="Jujutsu_Kaisen_manga.html" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
+                    <div class="gallery-overlay">
+                        <h3>Demon Slayer</h3>
+                        <p>Action / Historical</p>
+                        <a href="#" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/aot.webp" alt="Attack on Titan">
+                    <div class="gallery-overlay">
+                        <h3>Attack on Titan</h3>
+                        <p>Dark Fantasy / Drama</p>
+                        <a href="#" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/onepiece.webp" alt="One Piece">
+                    <div class="gallery-overlay">
+                        <h3>One Piece</h3>
+                        <p>Adventure / Comedy</p>
+                        <a href="#" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/chainsawman.webp" alt="Chainsaw Man">
+                    <div class="gallery-overlay">
+                        <h3>Chainsaw Man</h3>
+                        <p>Action / Horror</p>
+                        <a href="#" class="card-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="src/animecollections_x_poster/cyberpunk.webp" alt="Cyberpunk">
+                    <div class="gallery-overlay">
+                        <h3>Cyberpunk: Edgerunners</h3>
+                        <p>Sci-Fi / Action</p>
+                        <a href="#" class="card-btn">View Details</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
 
-        <div class="gallery-item">
-            <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
-            <div class="gallery-overlay">
-                <h3>Hunter x Hunter</h3>
-                <p>Adventure / Fantasy</p>
-                <a href="hunter_x_hunter.html" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
-            <div class="gallery-overlay">
-                <h3>Jujutsu Kaisen</h3>
-                <p>Dark Fantasy</p>
-                <a href="Jujutsu_Kaisen_manga.html" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
-            <div class="gallery-overlay">
-                <h3>Demon Slayer</h3>
-                <p>Action / Historical</p>
-                <a href="#" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/aot.webp" alt="Attack on Titan">
-            <div class="gallery-overlay">
-                <h3>Attack on Titan</h3>
-                <p>Dark Fantasy / Drama</p>
-                <a href="#" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/onepiece.webp" alt="One Piece">
-            <div class="gallery-overlay">
-                <h3>One Piece</h3>
-                <p>Adventure / Comedy</p>
-                <a href="#" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/chainsawman.webp" alt="Chainsaw Man">
-            <div class="gallery-overlay">
-                <h3>Chainsaw Man</h3>
-                <p>Action / Horror</p>
-                <a href="#" class="card-btn">View Details</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="src/animecollections_x_poster/cyberpunk.webp" alt="Cyberpunk">
-            <div class="gallery-overlay">
-                <h3>Cyberpunk: Edgerunners</h3>
-                <p>Sci-Fi / Action</p>
-                <a href="#" class="card-btn">View Details</a>
-            </div>
-        </div>
-    </div>
-</main>
-
-        <footer class="main-footer">
-            <p>By Aldiyar Akhtanov, Aituar Kaliyev</p>
+        <footer class="main-footer bg-dark text-light text-center py-3 border-top border-secondary">
+            <p class="m-0">By Aldiyar Akhtanov, Aituar Kaliyev</p>
         </footer>
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
