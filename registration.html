@@ -11,39 +11,26 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-dark navbar-expand-lg">
-        <div class="container">
+    <a href="index.html" class="logo">
+            <img src="src/logo_for_homepage.png" alt="Logo" class="logo">
+        </a>
 
-            <a class="navbar-brand" href="index.html">
-                <img src="src/logo_for_homepage.png" alt="Logo" class="logo">
-            </a>
+        <button class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <div class="btn-group" role="group" aria-label="Main navigation">
-                <a href="index.html" class="btn btn-primary">Homepage</a>
-                <a href="animecollections.html" class="btn btn-secondary">Anime</a>
-                <a href="mangacollections.html" class="btn btn-outline-light">Manga</a>
-            </div>
-            
-    </div>
+        <nav class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="animecollections.html" class="nav-link">Anime</a>
+            <a href="mangacollections.html" class="nav-link">Manga</a>
+        </nav>
 
         <a href="registration.html" class="profile">
             <img src="src/profile_icon.png" alt="Profile" class="logo">
         </a>
 
-    </div>
-
-            
-    </nav>
 </header>
 
     <main>
@@ -100,7 +87,6 @@
 </form> 
         Aldiyar Akhtanov, Aituar Kaliyev
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="Js/main.js"></script>
 </body>
 </html>
