@@ -87,7 +87,11 @@ burger.addEventListener("click", function () {
     nav_Menu.classList.toggle("active");
     });
 
-const notification = document.getElementById("notification-button");
-notification.addEventListener("click", function () {
-    confirm("Do you want to receive notifications?");
-});
+function notifyUser() {
+    var userDecision = confirm("Do you want to receive notifications?");
+    if(userDecision) {
+        alert("You have successfully subscribed to notifications!");
+    } else {
+        alert("You pressed <Отмена>")
+    }
+}
