@@ -216,3 +216,60 @@ main .notification-button {
     font-size: 18px;
     font-weight: bold;
 }
+
+
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    color: white;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 18px;
+    background: #252525;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+    padding: 0 18px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+.accordion-header span {
+    font-size: 22px;
+}

@@ -125,3 +125,25 @@ function showDateTime() {
 
 showDateTime();
 setInterval(showDateTime, 1000);
+
+
+const questions = document.querySelectorAll(".accordion-header");
+
+questions.forEach(function(question) {
+    question.addEventListener("click", function() {
+        const item = question.parentElement;
+        const content = item.querySelector(".accordion-content");
+        const icon = question.querySelector("span");
+
+        item.classList.toggle("active");
+
+        if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "-";
+        } else {
+            content.style.maxHeight = "0";
+            icon.textContent = "+";
+        }
+    });
+});
+
