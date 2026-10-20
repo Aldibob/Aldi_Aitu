@@ -15,10 +15,79 @@ console.log("Result: " + res);
 var num2 = 5;
 num2 += 7;
 console.log("Number 2: " + num2);
+
+
+var number = 15;
+
+if(number != 15) {
+    console.log("ok");
+} else if(number == 15) {
+    console.log("Ok!");
+} else {
+    console.log("not ok");
+}
+
+var arr = [1, 2, 3, true, "string", -100, 4, 5];
+console.log(arr);
+
+
+for(var i = 1; i <= 10; i++) {
+    console.log(i);
+}
+var j = 0;
+
+while(j < 10) {
+    console.log(j);
+    j++;
+}
 */
+
+// alert("Hello, welcome to my website");
+// var data = confirm("Вы сейчас дома?");
+// console.log(data);
+
+// var data = prompt("Введите ваш возраст: ");
+// console.log(data);
+
+// var person = null;
+
+// if(confirm("Вы хотите ввести данные?")) {
+//     person = prompt("Введите ваше имя: ");
+//     alert("Привет, " + person + "!");
+// } else {
+//     alert("Вы отказались от ввода данных.");
+// }
+
+// function info(word) {
+//     console.log(word + "!");   
+// }
+
+// function summa(a, b) {
+//     var res = a + b;
+//     info(res);
+// }
+
+// var sum1 = 0;
+
+// function sum(arr) {
+//     for(var i = 0; i < arr.length; i++) {
+//         sum1 += arr[i];
+//     }
+//     return sum1;
+// }
+
+// var array = [1, 2, 3, 4, 5];
+// var res1 = sum(array);
+// console.log("Sum: " + res1);
+
 const burger = document.getElementById("burger");
-const nav = document.getElementById("nav-menu");
+const nav_Menu = document.getElementById("nav-menu");
 
 burger.addEventListener("click", function () {
-    nav.classList.toggle("active");
+    nav_Menu.classList.toggle("active");
     });
+
+const notification = document.getElementById("notification-button");
+notification.addEventListener("click", function () {
+    confirm("Do you want to receive notifications?");
+});
