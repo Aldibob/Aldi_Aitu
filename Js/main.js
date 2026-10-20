@@ -95,3 +95,33 @@ function notifyUser() {
         alert("You pressed <Отмена>")
     }
 }
+
+function background_Color() {
+    if (document.body.style.backgroundColor === "white") {
+        document.body.style.backgroundColor = "#1a1a1a";
+    } else {
+        document.body.style.backgroundColor = "white";
+    }
+}
+
+document.getElementById("color-button").addEventListener("click", background_Color);
+
+
+function showDateTime() {
+    const now = new Date();
+
+    const formattedDate = now.toLocaleString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    });
+
+    document.getElementById("datetime").textContent = formattedDate;
+}
+
+showDateTime();
+setInterval(showDateTime, 1000);
