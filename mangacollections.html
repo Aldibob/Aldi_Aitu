@@ -37,11 +37,11 @@
         </a>
 
 </header>
-
-<main>
     <button onclick="background_Color" class="notification-button" id="color-button">
-        <div class="notification-button-text">Theme</div>
+        <div class="notification-button-text">Color</div>
     </button>
+<main>
+    
     
     <h1 class="responsive-title">
         Manga Collections
@@ -115,11 +115,43 @@
 </main>
 
 <footer>
-    <button onclick="notifyUser()" class="notification-button">
-        <div class="notification-button-text">notify</div>
-    </button>
+   
     Aldiyar Akhtanov, Aituar Kaliyev
 </footer>
+
+<button id="open-contact" class="contact-button">
+    Contact Us
+</button>
+
+<div id="contact-popup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Contact Us</h2>
+        <p>Have a question or suggestion? Send us a message!</p>
+
+        <form id="contact-form">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" placeholder="Enter your name" >
+
+            <label for="contact-email">Your Email</label>
+            <input type="email" id="contact-email" placeholder="example@email.com">
+
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
+
+            <p id="contact-status" role="status"></p>
+
+            <div class="popup-buttons">
+                <button type="button" id="cancel-contact">
+                    Cancel
+                </button>
+                <button type="submit">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous">

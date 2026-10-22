@@ -6,7 +6,9 @@
 
 body {
     background-color: #1a1a1a;
+    transition: background-color 0.5s ease;
 }
+
 
 h1 {
     text-align: center;
@@ -175,17 +177,20 @@ a {
     .site-name {
         display: none;
     }
+    
 }
 
 .notification-button {
     display: flex;
-    border: 4px solid black;
+    border: 4px transparent black;
     align-items: center;
-    width: 94px;
-    height: 30px;
+    width: 100px;
+    height: 50px;
     border-radius: 5px;
-    padding: 20px;
-    background-color: #1a1a1a;
+    padding: 30px;
+    background-color: #3f3e3e;
+    justify-content: center;
+    margin-left: 46%;
 }
 
 .notification-button-text {
@@ -243,7 +248,6 @@ main .notification-button {
     background: #252525;
     color: white;
     border: none;
-    cursor: pointer;
     text-align: left;
     font-size: 16px;
 
@@ -277,4 +281,98 @@ main .notification-button {
     text-align: left;
     white-space: pre-line;
     margin-top: 10px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #444;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background-color: white;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+}
+
+.popup-content label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.close-button {
+    right: 15px;
+    border: none;
+    font-size: 28px;
+    color: #555;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.popup-buttons button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+}
+
+.popup-buttons button[type="submit"] {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 24px 18px;
+    }
+
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    .popup-buttons button {
+        width: 100%;
+    }
 }

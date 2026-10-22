@@ -5,26 +5,28 @@ burger.addEventListener("click", function () {
     nav_Menu.classList.toggle("active");
     });
 
-function notifyUser() {
-    var userDecision = confirm("Do you want to receive notifications?");
-    if(userDecision) {
-        alert("You have successfully subscribed to notifications!");
-    } else {
-        alert("You pressed <Отмена>")
-    }
-}
-
 const colorButton = document.getElementById("color-button")
 
+const colors = [
+    "#f5f5f5",
+    "#d6eaf8",
+    "#d5f5e3",
+    "#fcf3cf",
+    "#f5cba7"
+];
+let currentColor = 0;
+
+
 if(colorButton) {
-    function background_Color() {
-        if (document.body.style.backgroundColor === "white") {
-            document.body.style.backgroundColor = "#1a1a1a";
-        } else {
-            document.body.style.backgroundColor = "white";
+    colorButton.addEventListener("click", () => {
+        document.body.style.backgroundColor = colors[currentColor];
+
+        currentColor++;
+
+        if(currentColor >= colors.length) {
+            currentColor = 0;
         }
-    }
-    document.getElementById("color-button").addEventListener("click", background_Color);
+    })
 
 }
 
@@ -60,7 +62,7 @@ questions.forEach(function(question) {
 
         item.classList.toggle("active");
 
-        if (item.classList.contains("active")) {
+        if(item.classList.contains("active")) {
             content.style.maxHeight = content.scrollHeight + "px";
             icon.textContent = "-";
         } else {
@@ -91,7 +93,7 @@ form.addEventListener("submit", (event) => {
     }
 
     if(password.value.length < 8) {
-        error.push("Password is less than 8 charater.")
+        error.push("Password is less than 8 charaters.")
     }
 
     if(password.value !== password_Confirm.value) {
@@ -126,3 +128,52 @@ form.addEventListener("submit", (event) => {
         errorsBlock.style.color = "green";
     }
 })
+
+const openButton = document.getElementById("open-contact");
+const cancelButton = document.getElementById("cancel-contact");
+const popup = document.getElementById("contact-popup");
+const contactForm = document.getElementById("contact-form");
+const contactStatus = document.getElementById("contact-status");
+
+if (openButton && popup) {
+    openButton.addEventListener("click", () => {
+        popup.classList.add("active");
+    });
+}
+
+function closePopup() {
+    if (popup) {
+        popup.classList.remove("active");
+    }
+}
+
+if (cancelButton) {
+    cancelButton.addEventListener("click", closePopup);
+}
+
+// Close when clicking outside the popup
+if (popup) {
+    popup.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            closePopup();
+        }
+    });
+}
+
+// Close with Escape key
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closePopup();
+    }
+});
+
+// Handle form submission
+if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        contactStatus.textContent =
+            "This demo form is not connected to a server. Your message was not sent.";
+        contactStatus.style.color = "red";
+    });
+}
