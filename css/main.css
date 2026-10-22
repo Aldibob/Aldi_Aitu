@@ -217,8 +217,6 @@ main .notification-button {
     font-weight: bold;
 }
 
-
-
 .faq-section {
     max-width: 800px;
     margin: 50px auto;
@@ -272,4 +270,11 @@ main .notification-button {
 
 .accordion-header span {
     font-size: 22px;
+}
+
+#errors {
+    font-size: 16px;
+    text-align: left;
+    white-space: pre-line;
+    margin-top: 10px;
 }

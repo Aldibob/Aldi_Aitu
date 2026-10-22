@@ -1,85 +1,3 @@
-/*var num = 5;
-num = 7;
-console.log("Number: " + num);
-
-const num1 = 10;
-console.log("Constant Number: " + num1);
-
-var number;
-number = false;
-
-var res = num * num1;
-
-console.log("Result: " + res);
-
-var num2 = 5;
-num2 += 7;
-console.log("Number 2: " + num2);
-
-
-var number = 15;
-
-if(number != 15) {
-    console.log("ok");
-} else if(number == 15) {
-    console.log("Ok!");
-} else {
-    console.log("not ok");
-}
-
-var arr = [1, 2, 3, true, "string", -100, 4, 5];
-console.log(arr);
-
-
-for(var i = 1; i <= 10; i++) {
-    console.log(i);
-}
-var j = 0;
-
-while(j < 10) {
-    console.log(j);
-    j++;
-}
-*/
-
-// alert("Hello, welcome to my website");
-// var data = confirm("Вы сейчас дома?");
-// console.log(data);
-
-// var data = prompt("Введите ваш возраст: ");
-// console.log(data);
-
-// var person = null;
-
-// if(confirm("Вы хотите ввести данные?")) {
-//     person = prompt("Введите ваше имя: ");
-//     alert("Привет, " + person + "!");
-// } else {
-//     alert("Вы отказались от ввода данных.");
-// }
-
-// function info(word) {
-//     console.log(word + "!");   
-// }
-
-// function summa(a, b) {
-//     var res = a + b;
-//     info(res);
-// }
-
-// var sum1 = 0;
-
-// function sum(arr) {
-//     for(var i = 0; i < arr.length; i++) {
-//         sum1 += arr[i];
-//     }
-//     return sum1;
-// }
-
-// var array = [1, 2, 3, 4, 5];
-// var res1 = sum(array);
-// console.log("Sum: " + res1);
-
 const burger = document.getElementById("burger");
 const nav_Menu = document.getElementById("nav-menu");
 
@@ -96,36 +14,41 @@ function notifyUser() {
     }
 }
 
-function background_Color() {
-    if (document.body.style.backgroundColor === "white") {
-        document.body.style.backgroundColor = "#1a1a1a";
-    } else {
-        document.body.style.backgroundColor = "white";
+const colorButton = document.getElementById("color-button")
+
+if(colorButton) {
+    function background_Color() {
+        if (document.body.style.backgroundColor === "white") {
+            document.body.style.backgroundColor = "#1a1a1a";
+        } else {
+            document.body.style.backgroundColor = "white";
+        }
     }
+    document.getElementById("color-button").addEventListener("click", background_Color);
+
 }
 
-document.getElementById("color-button").addEventListener("click", background_Color);
+const datetime = document.getElementById("datetime");
 
+if(datetime) {
+    function showDateTime() {
+        const now = new Date();
 
-function showDateTime() {
-    const now = new Date();
+        const formattedDate = now.toLocaleString("en-GB", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        });
 
-    const formattedDate = now.toLocaleString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    });
-
-    document.getElementById("datetime").textContent = formattedDate;
+        document.getElementById("datetime").textContent = formattedDate;
+    }
+    showDateTime();
+    setInterval(showDateTime, 1000);
 }
-
-showDateTime();
-setInterval(showDateTime, 1000);
-
 
 const questions = document.querySelectorAll(".accordion-header");
 
@@ -147,3 +70,59 @@ questions.forEach(function(question) {
     });
 });
 
+const form = document.querySelector("form");
+
+const name = document.getElementById("name");
+const password = document.getElementById("pass");
+const password_Confirm = document.getElementById("pass-confirm");
+const email = document.getElementById("email");
+const agree = document.getElementById("agree")
+const errorsBlock = document.getElementById("errors");
+
+let error = [];
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    
+    error = [];
+
+    if(name.value.trim() === "") {
+        error.push("Enter a nickname.");
+    }
+
+    if(password.value.length < 8) {
+        error.push("Password is less than 8 charater.")
+    }
+
+    if(password.value !== password_Confirm.value) {
+        error.push("Passwords does not match.")
+    }
+
+    if(!/[0-9]/.test(password.value)) {
+        error.push("Password should contain digit")
+    }
+
+    if(!/[a-z]/.test(password.value)) {
+        error.push("Password should contain lowercase letter.")
+    }
+
+    if(!/[A-Z]/.test(password.value)) {
+        error.push("Password should contain uppercase letter.")
+    }
+
+    if(!/^[^\s&@#$!/]+@[^\s&@#$!/]+\.[^\s&@#$!/]+$/.test(email.value)) {
+        error.push("Please enter a valid email.")
+    }
+
+    if(!agree.checked) {
+        error.push("You must agree with the terms.")
+    }
+
+    if(error.length > 0) {
+        errorsBlock.textContent = error.join("\n");
+        errorsBlock.style.color = "red";
+    } else {
+        errorsBlock.textContent = "Registration successful!";
+        errorsBlock.style.color = "green";
+    }
+})
