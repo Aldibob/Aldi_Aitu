@@ -160,13 +160,6 @@ if (popup) {
     });
 }
 
-// Close with Escape key
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        closePopup();
-    }
-});
-
 // Handle form submission
 if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
