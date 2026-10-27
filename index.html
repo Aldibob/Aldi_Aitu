@@ -37,20 +37,22 @@
         </a>
 
     </header>
-        <button onclick="background_Color" class="notification-button" id="color-button">
-            <div class="notification-button-text">Color</div>
-        </button>
-
          <div class="datetime-block">
             <h2>Current Date and Time</h2>
             <p id="datetime"></p>
         </div>
 
     <main>
+
+        <select id="genre-filter">
+            <option value="all">All genres</option>
+            <option value="slice-of-life">slice-of-life</option>
+            <option value="shounen">shounen</option>
+        </select>
        
 <h2 class="responsive-text">Manga Gallery</h2>
             <div class="image-gallery">
-                <div class="gallery-item">
+                <div class="gallery-item" data-genre="slice-of-life">
                     <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
                     <div class="gallery-overlay">
                         <h3>Oregairu</h3>
@@ -59,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" data-genre="shounen">
                     <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
                     <div class="gallery-overlay">
                         <h3>Bleach</h3>
@@ -68,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" data-genre="shounen">
                     <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
                     <div class="gallery-overlay">
                         <h3>Hunter x Hunter</h3>
@@ -77,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" data-genre="shounen">
                     <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
                     <div class="gallery-overlay">
                         <h3>Jujutsu Kaisen</h3>
@@ -86,12 +88,21 @@
                     </div>
                 </div>
 
-                <div class="gallery-item">
+                <div class="gallery-item" data-genre="shounen">
                     <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
                     <div class="gallery-overlay">
                         <h3>Demon Slayer</h3>
                         <p>Action / Historical</p>
-                        <a href="#" class="card-btn">Read</a>
+                        <a href="demon_slayer_manga.html" class="card-btn">Read</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-genre="slice-of-life">
+                    <img src="src/kaguya_manga_wallpapper.jpg" alt="Kaguya">
+                    <div class="gallery-overlay">
+                        <h3>Kaguya Sama</h3>
+                        <p>Comedy / Romantic</p>
+                        <a href="kaguya_love_and_war.html" class="card-btn">Read</a>
                     </div>
                 </div>
 
@@ -106,6 +117,9 @@
         while improving our web development skills.
         </p>
         </section> 
+        <button onclick="background_Color" class="notification-button" id="color-button">
+            <div class="notification-button-text">Theme</div>
+        </button>
     </footer>
 
     <button id="open-contact" class="contact-button">
@@ -118,7 +132,7 @@
         <h2>Contact Us</h2>
         <p>Have a question or suggestion? Send us a message!</p>
 
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
             <label for="contact-name">Your Name</label>
             <input type="text" id="contact-name"placeholder="Nickname">
 
@@ -129,6 +143,8 @@
             <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
 
             <p id="contact-status" role="status"></p>
+
+            <div id="errors-contact"></div>
 
             <div class="popup-buttons">
                 <button type="button" id="cancel-contact">

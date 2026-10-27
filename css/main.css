@@ -7,8 +7,8 @@
 body {
     background-color: black;
     transition: background-color 0.5s ease;
-    background-image: url('../src/hunter_x_hunter_wallpaper_1.png'),
-    url('../src/wallpapper1.png');
+    background-image: url('../src/wallpappers/hunter_x_hunter_wallpaper_1.png'),
+    url('../src/wallpappers/wallpapper1.png');
     background-repeat: no-repeat, no-repeat;
     background-position: right center, left center;
     background-attachment: fixed, fixed;
@@ -21,20 +21,15 @@ h1 {
 }
 
 main h2 {
-    margin-left: 10px;
-    text-align: start;
+    margin-left: 15px;
+    justify-content: center;
+    text-align: center;
     color: white;
 }
 
 .manga-reader {
-    width: 600px;
-    margin: 0 auto;
-}
-
-.manga-image {
-    width: 60%;
-    display: block;
-    margin: 0 auto;
+    width: 400px;
+    margin: 0 25%;
 }
 
 .logo {
@@ -193,15 +188,13 @@ a {
 
 .notification-button {
     display: flex;
-    border: 4px transparent black;
     align-items: center;
     width: 100px;
     height: 50px;
     border-radius: 5px;
     padding: 30px;
-    background-color: #3f3e3e;
+    background-color: #1a1a1a;
     justify-content: center;
-    margin-left: 46%;
 }
 
 .notification-button-text {
@@ -397,9 +390,9 @@ main .notification-button {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    height: 190px;
+    height: 175px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .gallery-item img {

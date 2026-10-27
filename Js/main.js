@@ -8,11 +8,8 @@ burger.addEventListener("click", function () {
 const colorButton = document.getElementById("color-button")
 
 const colors = [
-    "#f5f5f5",
-    "#d6eaf8",
-    "#d5f5e3",
-    "#fcf3cf",
-    "#f5cba7"
+    "#f5cba7",
+    "#1a1a1a"
 ];
 let currentColor = 0;
 
@@ -135,6 +132,12 @@ const popup = document.getElementById("contact-popup");
 const contactForm = document.getElementById("contact-form");
 const contactStatus = document.getElementById("contact-status");
 
+const ContactName = document.getElementById("contact-name");
+const ContactEmail = document.getElementById("contact-email");
+const errorsBlockContact = document.getElementById("errors-contact");
+let errorContact = [];
+
+
 if (openButton && popup) {
     openButton.addEventListener("click", () => {
         popup.classList.add("active");
@@ -165,8 +168,37 @@ if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        contactStatus.textContent =
-            "This demo form is not connected to a server. Your message was not sent.";
-        contactStatus.style.color = "red";
+        errorContact = [];
+
+        if(ContactName.value === "") {
+            errorContact.push("Enter a nickname.");
+        }
+        if(!/^[^\s&@#$!/]+@[^\s&@#$!/]+\.[^\s&@#$!/]+$/.test(ContactEmail.value)) {
+            errorContact.push("Please enter a valid email.")
+        }
+        if(errorContact.length > 0) {
+            errorsBlockContact.textContent = errorContact.join("\n");
+            errorsBlockContact.style.color = "red";
+        } else {
+            errorsBlockContact.textContent = "Message sent successful!";
+            errorsBlockContact.style.color = "green";
+        }
     });
 }
+
+const filter = document.getElementById("genre-filter");
+const cards = document.querySelectorAll(".gallery-item");
+
+filter.addEventListener("change", function() {
+    const selectedGenre = filter.value;
+
+    cards.forEach(function(card) {
+        const genre = card.dataset.genre;
+
+        if (selectedGenre === "all" || genre === selectedGenre) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
