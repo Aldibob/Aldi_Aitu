@@ -2,10 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Hikikomori Advanced JS Loaded!");
 
-    // ==========================================
-    // 1. SOUND EFFECTS
-    // ==========================================
-
     let audioContext = null;
 
     function playClickSound() {
@@ -57,11 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ==========================================
-    // 2. DOM MANIPULATION: RATING STARS
-    // ==========================================
-
-    // Rating appears ONLY on the Oregairu page.
     const overviewSection = document.querySelector(
         "body.oregairu .oregairu-main"
     );
@@ -131,10 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ==========================================
-    // 3. DAY / NIGHT THEME SWITCHER
-    // ==========================================
-
     const navbarNav = document.querySelector(".navbar-nav");
 
     if (navbarNav) {
@@ -189,11 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // ==========================================
-    // 4. EVENT HANDLING: CURRENT TIME
-    // ==========================================
-
     const footerElement =
         document.querySelector("footer.main-footer");
 
@@ -234,10 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ==========================================
-    // 5. SWITCH STATEMENT: TIME GREETING
-    // ==========================================
-
     function getTimeGreeting() {
         const hour = new Date().getHours();
         let message = "";
@@ -274,9 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
         footerElement.appendChild(greetingContainer);
     }
 
-    // ==========================================
-    // 6. KEYBOARD EVENT HANDLING
-    // ==========================================
 
     const navLinks = document.querySelectorAll(
         ".navbar-nav .nav-link"
@@ -293,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const activeElement = document.activeElement;
 
-            // Do not interfere with typing in form fields.
             if (
                 activeElement.matches(
                     "input, textarea, select, [contenteditable]"
@@ -305,7 +279,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentIndex =
                 Array.from(navLinks).indexOf(activeElement);
 
-            // Navigation works when a menu item has focus.
             if (currentIndex === -1) return;
 
             event.preventDefault();
@@ -326,10 +299,6 @@ document.addEventListener("DOMContentLoaded", () => {
             nextLink.focus();
         });
     }
-
-    // ==========================================
-    // 7. OBJECTS, ARRAYS AND HIGHER-ORDER FUNCTIONS
-    // ==========================================
 
     const animeData = [
         {
@@ -358,9 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Anime: ${anime.title} -> ${anime.quote}`);
     });
 
-    // ==========================================
-    // 8. CALLBACK: OREGAIRU REVIEW FORM
-    // ==========================================
+
 
     const reviewForm = document.querySelector(
         "body.oregairu form"
@@ -396,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             playClickSound();
 
-            // Demo submission: no backend is connected.
+            
             showFormMessage(
                 `Thank you, ${userName}! Your review was received in demo mode.`
             );
@@ -410,9 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // ==========================================
-    // 9. ANIMATIONS
-    // ==========================================
 
     const cards = document.querySelectorAll(
         ".custom-card, .gallery-item, .card"

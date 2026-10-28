@@ -303,7 +303,6 @@ body {
     --theme-star-selected: #ffb6c1;
 }
 
-/* Day theme colors */
 body.day-theme {
     --theme-surface: rgba(255, 255, 255, 0.96);
     --theme-main: rgba(250, 248, 255, 0.94);
@@ -319,7 +318,6 @@ body.day-theme {
     color: var(--theme-text);
 }
 
-/* Smooth theme transitions */
 body,
 .main-content,
 .sidebar,
@@ -335,10 +333,6 @@ body,
         color 0.3s ease,
         border-color 0.3s ease;
 }
-
-/* ==========================================
-   DAY THEME: MAIN CONTENT
-   ========================================== */
 
 body.day-theme .main-content {
     background-color: var(--theme-main);
@@ -364,10 +358,6 @@ body.day-theme .oregairu-main {
     color: var(--theme-text);
 }
 
-/* ==========================================
-   DAY THEME: CARDS
-   ========================================== */
-
 body.day-theme .custom-card {
     background-color: var(--theme-surface);
     color: var(--theme-text);
@@ -390,8 +380,6 @@ body.day-theme .oregairu-main .bg-dark {
     color: var(--theme-text) !important;
 }
 
-/* Override Bootstrap text utility classes
-   inside the main content only */
 body.day-theme .main-content .text-light,
 body.day-theme .oregairu-main .text-light,
 body.day-theme .oregairu-main .card-text {
@@ -410,10 +398,6 @@ body.day-theme .oregairu-main .text-pink {
 body.day-theme .oregairu-main .border-purple {
     border-color: var(--theme-border) !important;
 }
-
-/* ==========================================
-   DAY THEME: NAVBAR AND FOOTER
-   ========================================== */
 
 body.day-theme .navbar.bg-dark {
     background-color: #f1eafa !important;
@@ -445,10 +429,6 @@ body.day-theme .main-footer .text-secondary {
     color: #555566 !important;
 }
 
-/* ==========================================
-   DAY THEME: FORM
-   ========================================== */
-
 body.day-theme .oregairu-main .form-label,
 body.day-theme .oregairu-main .form-check-label {
     color: var(--theme-text) !important;
@@ -470,9 +450,6 @@ body.day-theme .oregairu-main .input-group-text {
     color: #332244 !important;
 }
 
-/* ==========================================
-   RATING STARS
-   ========================================== */
 
 .rating-container {
     background-color: var(--theme-surface);
@@ -522,9 +499,6 @@ body.day-theme .oregairu-main .input-group-text {
     border-radius: 4px;
 }
 
-/* ==========================================
-   THEME BUTTON
-   ========================================== */
 
 #themeToggleBtn {
     color: #ffffff;
@@ -541,10 +515,6 @@ body.day-theme #themeToggleBtn:hover {
     color: #ffffff;
 }
 
-/* ==========================================
-   TIME AND GREETING
-   ========================================== */
-
 #timeDisplay,
 .time-greeting {
     color: #ffb6c1;
@@ -555,10 +525,6 @@ body.day-theme .time-greeting {
     color: #873b8f;
 }
 
-/* ==========================================
-   REVIEW FORM FEEDBACK
-   ========================================== */
-
 .review-message {
     color: #ffb6c1;
     font-weight: 500;
@@ -567,10 +533,6 @@ body.day-theme .time-greeting {
 body.day-theme .review-message {
     color: #7136b5;
 }
-
-/* ==========================================
-   ANIMATIONS
-   ========================================== */
 
 .js-animated-card {
     opacity: 0;
@@ -587,12 +549,10 @@ body.day-theme .review-message {
     transform: translateY(0);
 }
 
-/* Preserve original gallery hover effect */
 .gallery-item.is-visible:hover img {
     transform: scale(1.08);
 }
 
-/* Keep gallery overlay readable in both themes */
 body.day-theme .gallery-overlay {
     background-color: rgba(20, 20, 28, 0.88);
 }
@@ -605,13 +565,11 @@ body.day-theme .gallery-overlay p {
     color: #cccccc;
 }
 
-/* Keyboard accessibility */
 .navbar-nav .nav-link:focus-visible {
     outline: 2px solid #ffb6c1;
     outline-offset: 3px;
 }
 
-/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
     .js-animated-card {
         opacity: 1;
