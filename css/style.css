@@ -289,3 +289,337 @@ body.anime-collections {
 .card-btn:hover {
     background-color: #ff69b4;
 }
+
+body {
+    --theme-surface: rgba(20, 20, 28, 0.9);
+    --theme-main: rgba(20, 20, 28, 0.75);
+    --theme-sidebar: rgba(15, 15, 22, 0.92);
+    --theme-text: #ffffff;
+    --theme-muted: #cccccc;
+    --theme-heading: #a272ff;
+    --theme-pink: #ffb6c1;
+    --theme-border: rgba(138, 43, 226, 0.5);
+    --theme-star-empty: #ffffff;
+    --theme-star-selected: #ffb6c1;
+}
+
+/* Day theme colors */
+body.day-theme {
+    --theme-surface: rgba(255, 255, 255, 0.96);
+    --theme-main: rgba(250, 248, 255, 0.94);
+    --theme-sidebar: rgba(245, 240, 255, 0.96);
+    --theme-text: #20202a;
+    --theme-muted: #555566;
+    --theme-heading: #7136b5;
+    --theme-pink: #a72b65;
+    --theme-border: rgba(113, 54, 181, 0.45);
+    --theme-star-empty: #555566;
+    --theme-star-selected: #b83b72;
+
+    color: var(--theme-text);
+}
+
+/* Smooth theme transitions */
+body,
+.main-content,
+.sidebar,
+.oregairu-main,
+.custom-card,
+.card,
+.trailer-block,
+.rating-container,
+.navbar,
+.main-footer {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* ==========================================
+   DAY THEME: MAIN CONTENT
+   ========================================== */
+
+body.day-theme .main-content {
+    background-color: var(--theme-main);
+    color: var(--theme-text);
+}
+
+body.day-theme .sidebar {
+    background-color: var(--theme-sidebar);
+    color: var(--theme-text);
+    border-right-color: var(--theme-border);
+}
+
+body.day-theme .sidebar h3 {
+    color: var(--theme-heading);
+}
+
+body.day-theme .sidebar a.text-light {
+    color: var(--theme-text) !important;
+}
+
+body.day-theme .oregairu-main {
+    background-color: var(--theme-main) !important;
+    color: var(--theme-text);
+}
+
+/* ==========================================
+   DAY THEME: CARDS
+   ========================================== */
+
+body.day-theme .custom-card {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+body.day-theme .custom-card-body h4 {
+    color: var(--theme-heading);
+}
+
+body.day-theme .custom-card-body p {
+    color: var(--theme-muted);
+}
+
+body.day-theme .card.bg-dark,
+body.day-theme .trailer-block.bg-dark,
+body.day-theme section.bg-dark,
+body.day-theme .oregairu-main .bg-dark {
+    background-color: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+}
+
+/* Override Bootstrap text utility classes
+   inside the main content only */
+body.day-theme .main-content .text-light,
+body.day-theme .oregairu-main .text-light,
+body.day-theme .oregairu-main .card-text {
+    color: var(--theme-text) !important;
+}
+
+body.day-theme .main-content .text-purple,
+body.day-theme .oregairu-main .text-purple {
+    color: var(--theme-heading) !important;
+}
+
+body.day-theme .oregairu-main .text-pink {
+    color: var(--theme-pink) !important;
+}
+
+body.day-theme .oregairu-main .border-purple {
+    border-color: var(--theme-border) !important;
+}
+
+/* ==========================================
+   DAY THEME: NAVBAR AND FOOTER
+   ========================================== */
+
+body.day-theme .navbar.bg-dark {
+    background-color: #f1eafa !important;
+}
+
+body.day-theme .navbar .nav-link.text-white {
+    color: #332244 !important;
+}
+
+body.day-theme .navbar .nav-link:hover,
+body.day-theme .navbar .nav-link.active {
+    color: #7136b5 !important;
+}
+
+body.day-theme .navbar .navbar-toggler {
+    border-color: #7136b5;
+}
+
+body.day-theme .navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.day-theme .main-footer.bg-dark {
+    background-color: #eee5fa !important;
+    color: #292238 !important;
+}
+
+body.day-theme .main-footer .text-secondary {
+    color: #555566 !important;
+}
+
+/* ==========================================
+   DAY THEME: FORM
+   ========================================== */
+
+body.day-theme .oregairu-main .form-label,
+body.day-theme .oregairu-main .form-check-label {
+    color: var(--theme-text) !important;
+}
+
+body.day-theme .oregairu-main .form-control.bg-secondary {
+    background-color: #ffffff !important;
+    color: #20202a !important;
+    border: 1px solid #c5b6d8 !important;
+}
+
+body.day-theme .oregairu-main .form-control::placeholder {
+    color: #777080 !important;
+    opacity: 1;
+}
+
+body.day-theme .oregairu-main .input-group-text {
+    background-color: #e9ddf7 !important;
+    color: #332244 !important;
+}
+
+/* ==========================================
+   RATING STARS
+   ========================================== */
+
+.rating-container {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+}
+
+.rating-container p,
+.rating-container small {
+    color: var(--theme-text);
+}
+
+#star-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+#star-rating .star {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0 2px;
+
+    color: var(--theme-star-empty);
+    font-size: 30px;
+    line-height: 1.2;
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#star-rating .star.selected {
+    color: var(--theme-star-selected);
+}
+
+#star-rating .star:hover {
+    transform: scale(1.2);
+}
+
+#star-rating .star:focus-visible {
+    outline: 2px solid #a272ff;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   THEME BUTTON
+   ========================================== */
+
+#themeToggleBtn {
+    color: #ffffff;
+    border: 1px solid #8a2be2;
+}
+
+body.day-theme #themeToggleBtn {
+    color: #332244;
+    border-color: #7136b5;
+}
+
+body.day-theme #themeToggleBtn:hover {
+    background-color: #7136b5;
+    color: #ffffff;
+}
+
+/* ==========================================
+   TIME AND GREETING
+   ========================================== */
+
+#timeDisplay,
+.time-greeting {
+    color: #ffb6c1;
+}
+
+body.day-theme #timeDisplay,
+body.day-theme .time-greeting {
+    color: #873b8f;
+}
+
+/* ==========================================
+   REVIEW FORM FEEDBACK
+   ========================================== */
+
+.review-message {
+    color: #ffb6c1;
+    font-weight: 500;
+}
+
+body.day-theme .review-message {
+    color: #7136b5;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+.js-animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        background-color 0.3s ease;
+}
+
+.js-animated-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Preserve original gallery hover effect */
+.gallery-item.is-visible:hover img {
+    transform: scale(1.08);
+}
+
+/* Keep gallery overlay readable in both themes */
+body.day-theme .gallery-overlay {
+    background-color: rgba(20, 20, 28, 0.88);
+}
+
+body.day-theme .gallery-overlay h3 {
+    color: #ffb6c1;
+}
+
+body.day-theme .gallery-overlay p {
+    color: #cccccc;
+}
+
+/* Keyboard accessibility */
+.navbar-nav .nav-link:focus-visible {
+    outline: 2px solid #ffb6c1;
+    outline-offset: 3px;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .js-animated-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    #star-rating .star {
+        transition: none;
+    }
+}
