@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Hikikomori Advanced JS Loaded!");
-
+    //sound
     let audioContext = null;
 
     function playClickSound() {
@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+    //oregairu rating
     const overviewSection = document.querySelector(
         "body.oregairu .oregairu-main"
     );
@@ -122,6 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+    //Day/night mode toggle button
     const navbarNav = document.querySelector(".navbar-nav");
 
     if (navbarNav) {
@@ -142,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const themeToggleBtn =
             document.getElementById("themeToggleBtn");
 
-        // Restore previously selected theme.
         let savedTheme = null;
 
         try {
@@ -176,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    //time
     const footerElement =
         document.querySelector("footer.main-footer");
 
@@ -216,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Time-based greeting
     function getTimeGreeting() {
         const hour = new Date().getHours();
         let message = "";
@@ -252,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
         footerElement.appendChild(greetingContainer);
     }
 
-
+    //navbar keyboard navigation
     const navLinks = document.querySelectorAll(
         ".navbar-nav .nav-link"
     );
@@ -327,8 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Anime: ${anime.title} -> ${anime.quote}`);
     });
 
-
-
+    //reviev form
     const reviewForm = document.querySelector(
         "body.oregairu form"
     );
@@ -377,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-
+    //animated cards
     const cards = document.querySelectorAll(
         ".custom-card, .gallery-item, .card"
     );
