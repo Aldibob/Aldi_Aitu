@@ -518,3 +518,14 @@ main .notification-button {
     font-weight: bold;
     border-radius: 3px;
 }
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(to right, #7928ca, #ff0080);
+    z-index: 9999;
+    transition: width 0.1s linear;
+}

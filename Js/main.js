@@ -258,3 +258,17 @@ $("#search-bar").on("input", () =>{
         $(this).html(highlightedText);
 });
 });
+
+$(window).on("scroll", function() {
+
+    const scrollTop = $(window).scrollTop();
+
+    const documentHeight = $(document).height();
+
+    const windowHeight = $(window).height();
+
+    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+    $("#progress-bar").css("width", scrollPercent + "%");
+
+});
