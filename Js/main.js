@@ -193,15 +193,68 @@ if (contactForm) {
     });
 }
 
+mangaList = ["Bleach", "Demon Slayer", "Hunter x Hunter", "Jujutsu Kaisen", "Kaguya Sama", "Oregairu"];
+
 $("#search-bar").on("input", () =>{
+
     const searchTerm = $("#search-bar").val().toLowerCase().trim();
+
+    const suggestions = mangaList.filter(manga => manga.toLowerCase().includes(searchTerm));
+
+    $("#suggestions").empty();
+
+    if(searchTerm === "") {
+        $("#suggestions").hide();
+    }  else { 
+        $("#suggestions").show();
+    }
+
+    $.each(suggestions, function(index, manga) {
+       $("#suggestions").append(
+         `<div class="suggestion-item">${manga}</div>`
+    );
+});
+
     $(".gallery-item").each(function(){
-        const title = $(this).data("genre").toLowerCase().trim();
+        const title = $(this).find("h3").text().toLowerCase().trim();
+
         if(title.includes(searchTerm)){
             $(this).show();
         } else {
             $(this).hide();
         }
     })
-})
 
+    $("#suggestions").on("click", ".suggestion-item", function() {
+        const selectedManga = $(this).text();
+        
+        $("#search-bar").val(selectedManga);
+        
+        $("#suggestions").empty();
+
+        $("#search-bar").trigger("input");
+    })
+
+    $(".gallery-item h3, .gallery-item p").each(function() {
+    $(this).text($(this).text());
+});
+
+    if (searchTerm === "") {
+        return;
+    }
+
+    const escapedTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    const regex = new RegExp(escapedTerm, "gi");
+
+    $(".gallery-item h3, .gallery-item p").each(function() {
+        const text = $(this).text();
+
+        const highlightedText = text.replace(
+            regex,
+            match => `<span class="highlight">${match}</span>`
+        );
+
+        $(this).html(highlightedText);
+});
+});

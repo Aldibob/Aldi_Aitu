@@ -25,6 +25,7 @@ h2 {
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 15px;
 }
 
 .manga-reader {
@@ -471,16 +472,49 @@ main .notification-button {
 }
 
 .search-container {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 #search-bar {
-    width: 80%;
+    width: 100%;
     max-width: 400px;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #1a1a1a;
     color: #ccc;
+    box-sizing: border-box;
+}
+
+#suggestions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-width: 400px;
+    background-color: #1a1a1a;
+    color: #ccc;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #333;
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
 }
