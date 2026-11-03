@@ -272,3 +272,18 @@ $(window).on("scroll", function() {
     $("#progress-bar").css("width", scrollPercent + "%");
 
 });
+
+$({ count: 0 }).animate(
+    { count: $("#manga-counter").data("target") },
+    {
+        duration: 2000,
+
+        step: function() {
+            $("#manga-counter").text(Math.floor(this.count));
+        },
+
+        complete: function() {
+            $("#manga-counter").text(this.count);
+        }
+    }
+);

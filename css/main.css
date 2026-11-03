@@ -525,7 +525,17 @@ main .notification-button {
     left: 0;
     width: 0%;
     height: 5px;
-    background: linear-gradient(to right, #7928ca, #ff0080);
+    background: linear-gradient(to right, #ca6128, #ff1500);
     z-index: 9999;
     transition: width 0.1s linear;
+}
+
+.stats {
+    text-align: center;
+    padding: 30px;
+}
+
+#manga-counter {
+    font-size: 45px;
+    color: #a855f7;
 }
