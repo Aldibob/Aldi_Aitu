@@ -1,7 +1,7 @@
 const burger = document.getElementById("burger");
 const nav_Menu = document.getElementById("nav-menu");
 
-burger.addEventListener("click", function () {
+burger.addEventListener("click", () => {
     nav_Menu.classList.toggle("active");
     });
 
@@ -51,8 +51,8 @@ if(datetime) {
 
 const questions = document.querySelectorAll(".accordion-header");
 
-questions.forEach(function(question) {
-    question.addEventListener("click", function() {
+questions.forEach((question) => {
+    question.addEventListener("click", () => {
         const item = question.parentElement;
         const content = item.querySelector(".accordion-content");
         const icon = question.querySelector("span");
@@ -89,28 +89,32 @@ form.addEventListener("submit", (event) => {
         error.push("Enter a nickname.");
     }
 
+    if(name.value.length < 3) {
+        error.push("Nickname must be at least 3 character long.")
+    }
+
+    if(/^[ ]/.test(name.value)) {
+        error.push("Nickname can't start with space.")
+    }
+
     if(password.value.length < 8) {
         error.push("Password is less than 8 charaters.")
     }
-
     if(password.value !== password_Confirm.value) {
         error.push("Passwords does not match.")
     }
-
     if(!/[0-9]/.test(password.value)) {
         error.push("Password should contain digit")
     }
-
     if(!/[a-z]/.test(password.value)) {
         error.push("Password should contain lowercase letter.")
     }
-
     if(!/[A-Z]/.test(password.value)) {
         error.push("Password should contain uppercase letter.")
     }
 
-    if(!/^[^\s&@#$!/]+@[^\s&@#$!/]+\.[^\s&@#$!/]+$/.test(email.value)) {
-        error.push("Please enter a valid email.")
+    if(!/^(?!.*\.\.)[\w\.]+@[\w]+\.[\w]{2,}$/.test(email.value)) {
+            error.push("Please enter a valid email.")
     }
 
     if(!agree.checked) {
@@ -170,10 +174,13 @@ if (contactForm) {
 
         errorContact = [];
 
-        if(ContactName.value === "") {
+        if(ContactName.value.trim() === "") {
             errorContact.push("Enter a nickname.");
         }
-        if(!/^[^\s&@#$!/]+@[^\s&@#$!/]+\.[^\s&@#$!/]+$/.test(ContactEmail.value)) {
+        if(/^[ ]/.test(ContactName.value)) {
+            errorContact.push("Nickname can't start with space.")
+        }
+        if(!/^(?!.*\.\.)[\w\.]+@[\w]+\.[\w]{2,}$/.test(ContactEmail.value)) {
             errorContact.push("Please enter a valid email.")
         }
         if(errorContact.length > 0) {
@@ -186,19 +193,15 @@ if (contactForm) {
     });
 }
 
-const filter = document.getElementById("genre-filter");
-const cards = document.querySelectorAll(".gallery-item");
-
-filter.addEventListener("change", function() {
-    const selectedGenre = filter.value;
-
-    cards.forEach(function(card) {
-        const genre = card.dataset.genre;
-
-        if (selectedGenre === "all" || genre === selectedGenre) {
-            card.style.display = "block";
+$("#search-bar").on("input", () =>{
+    const searchTerm = $("#search-bar").val().toLowerCase().trim();
+    $(".gallery-item").each(function(){
+        const title = $(this).data("genre").toLowerCase().trim();
+        if(title.includes(searchTerm)){
+            $(this).show();
         } else {
-            card.style.display = "none";
+            $(this).hide();
         }
-    });
-});
+    })
+})
+

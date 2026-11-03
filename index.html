@@ -6,6 +6,8 @@
         <title>Anime Website</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
+        <script src="https:/code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script src="script.js"></script>
     </head>
 <body class="page-shell">
 
@@ -43,16 +45,13 @@
         </div>
 
     <main>
-
-        <select id="genre-filter">
-            <option value="all">All genres</option>
-            <option value="slice-of-life">slice-of-life</option>
-            <option value="shounen">shounen</option>
-        </select>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for manga">
+        </div>
        
 <h2 class="responsive-text">Manga Gallery</h2>
             <div class="image-gallery">
-                <div class="gallery-item" data-genre="slice-of-life">
+                <div class="gallery-item" data-genre="Oregairu">
                     <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
                     <div class="gallery-overlay">
                         <h3>Oregairu</h3>
@@ -61,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-genre="shounen">
+                <div class="gallery-item" data-genre="Bleach">
                     <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
                     <div class="gallery-overlay">
                         <h3>Bleach</h3>
@@ -70,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-genre="shounen">
+                <div class="gallery-item" data-genre="Hunter x Hunter">
                     <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
                     <div class="gallery-overlay">
                         <h3>Hunter x Hunter</h3>
@@ -79,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-genre="shounen">
+                <div class="gallery-item" data-genre="Jujutsu Kaisen">
                     <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
                     <div class="gallery-overlay">
                         <h3>Jujutsu Kaisen</h3>
@@ -88,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-genre="shounen">
+                <div class="gallery-item" data-genre="Demon Slayer">
                     <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
                     <div class="gallery-overlay">
                         <h3>Demon Slayer</h3>
@@ -97,7 +96,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-genre="slice-of-life">
+                <div class="gallery-item" data-genre="Kaguya Sama">
                     <img src="src/kaguya_manga_wallpapper.jpg" alt="Kaguya">
                     <div class="gallery-overlay">
                         <h3>Kaguya Sama</h3>
@@ -156,7 +155,9 @@
             </div>
         </form>
     </div>
-</div>
+</div>  
+        
+
         <script src="Js/main.js"></script>
     </body>
 </html>

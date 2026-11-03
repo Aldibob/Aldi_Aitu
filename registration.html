@@ -84,18 +84,19 @@
         <h2>Contact Us</h2>
         <p>Have a question or suggestion? Send us a message!</p>
 
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
             <label for="contact-name">Your Name</label>
-            <input type="text" id="contact-name"
-                   placeholder="Enter your name" required>
+            <input type="text" id="contact-name"placeholder="Nickname">
 
             <label for="contact-email">Your Email</label>
             <input type="email" id="contact-email" placeholder="example@email.com">
 
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" rows="4" placeholder="Write your message..." required></textarea>
+            <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
 
             <p id="contact-status" role="status"></p>
+
+            <div id="errors-contact"></div>
 
             <div class="popup-buttons">
                 <button type="button" id="cancel-contact">

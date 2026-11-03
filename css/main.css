@@ -43,7 +43,12 @@ h2 {
 header  {
     background-color: #3f3e3e;
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .profile {
@@ -463,4 +468,19 @@ main .notification-button {
     .gallery-item {
         height: 400px;
     }
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #1a1a1a;
+    color: #ccc;
 }
