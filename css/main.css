@@ -478,6 +478,20 @@ main .notification-button {
     margin: 20px auto;
 }
 
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#copy-search {
+    flex-shrink: 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #search-bar {
     width: 100%;
     max-width: 400px;

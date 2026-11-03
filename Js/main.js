@@ -287,3 +287,22 @@ $({ count: 0 }).animate(
         }
     }
 );
+
+$("#copy-search").on("click", function() {
+
+    const searchText = $("#search-bar").val();
+
+    if (searchText.trim() === "") {
+        showToast("Search bar is empty!");
+        return;
+    }
+
+    navigator.clipboard.writeText(searchText)
+        .then(function() {
+            showToast("Text copied successfully!");
+        })
+        .catch(function() {
+            showToast("Failed to copy text!");
+        });
+
+});
