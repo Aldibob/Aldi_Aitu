@@ -1,4 +1,9 @@
-* {
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,32 +11,372 @@
 
 body {
     font-size: 14px;
+    background-color: black;
+    transition: background-color 0.5s ease;
 }
 
-h1, .fs-responsive {
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    margin-left: 15px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+h1,
+.fs-responsive {
     font-size: 1.5rem;
 }
-
 
 @media (min-width: 768px) {
     body {
         font-size: 16px;
     }
-    h1, .fs-responsive {
+
+    h1,
+    .fs-responsive {
         font-size: 2rem;
     }
 }
-
 
 @media (min-width: 992px) {
     body {
         font-size: 18px;
     }
-    h1, .fs-responsive {
+
+    h1,
+    .fs-responsive {
         font-size: 2.5rem;
     }
 }
 
+.responsive-title {
+    font-size: 28px;
+    text-align: center;
+    color: white;
+}
+
+.responsive-text {
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    .responsive-title {
+        font-size: 38px;
+    }
+
+    .responsive-text {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    .responsive-title {
+        font-size: 52px;
+    }
+
+    .responsive-text {
+        font-size: 40px;
+    }
+}
+
+/* =========================================================
+   CSS CUSTOM PROPERTIES (THEME)
+   ========================================================= */
+body {
+    --theme-surface:       rgba(20, 20, 28, 0.9);
+    --theme-main:          rgba(20, 20, 28, 0.75);
+    --theme-sidebar:       rgba(15, 15, 22, 0.92);
+    --theme-text:          #ffffff;
+    --theme-muted:         #cccccc;
+    --theme-heading:       #a272ff;
+    --theme-pink:          #ffb6c1;
+    --theme-border:        rgba(138, 43, 226, 0.5);
+    --theme-star-empty:    #ffffff;
+    --theme-star-selected: #ffb6c1;
+}
+
+body.day-theme {
+    --theme-surface:       rgba(255, 255, 255, 0.96);
+    --theme-main:          rgba(250, 248, 255, 0.94);
+    --theme-sidebar:       rgba(245, 240, 255, 0.96);
+    --theme-text:          #20202a;
+    --theme-muted:         #555566;
+    --theme-heading:       #7136b5;
+    --theme-pink:          #a72b65;
+    --theme-border:        rgba(113, 54, 181, 0.45);
+    --theme-star-empty:    #555566;
+    --theme-star-selected: #b83b72;
+    color: var(--theme-text);
+}
+
+/* =========================================================
+   THEME TRANSITIONS
+   ========================================================= */
+body,
+.main-content,
+.sidebar,
+.oregairu-main,
+.custom-card,
+.card,
+.trailer-block,
+.rating-container,
+.navbar,
+.main-footer {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* =========================================================
+   PAGE BACKGROUNDS
+   ========================================================= */
+body.page-shell {
+    background-image:
+        url('../src/wallpappers/hunter_x_hunter_wallpaper_1.png'),
+        url('../src/wallpappers/wallpapper1.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right center, left center;
+    background-attachment: fixed, fixed;
+    background-size: 40% auto, 40% auto;
+}
+
+body.oregairu {
+    background-image: url('../src/Oregairu/R.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body.anime-collections {
+    background-image: url('../src/wall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION (custom, non-Bootstrap pages)
+   ========================================================= */
+header {
+    background-color: #3f3e3e;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.site-name {
+    color: #ff6500;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.profile {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #c5c5c5;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ff6500;
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #c5c5c5;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+        position: absolute;
+        left: 47%;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: #3f3e3e;
+        gap: 10px;
+        z-index: 1001;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .site-name {
+        display: none;
+    }
+}
+
+/* =========================================================
+   HEADER & NAVIGATION (Bootstrap pages)
+   ========================================================= */
+.logo {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 2px;
+    object-fit: cover;
+    border: 2px solid #8a2be2;
+}
+
+/* =========================================================
+   SITE LAYOUT (Bootstrap pages grid)
+   ========================================================= */
+.site-layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .site-layout {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+.site-layout .main-header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgba(15, 15, 22, 0.92);
+    border-right: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.sidebar h3 {
+    color: #a272ff;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    grid-area: main;
+    background-color: rgba(20, 20, 28, 0.75);
+}
+
+/* =========================================================
+   UTILITY CLASSES
+   ========================================================= */
+.bg-dark-overlay {
+    background-color: rgba(15, 15, 22, 0.88);
+}
+
+.bg-dark-purple {
+    background-color: #2b1040;
+}
+
+.text-purple {
+    color: #a272ff !important;
+}
+
+.text-pink {
+    color: #ffb6c1 !important;
+}
+
+.border-purple {
+    border: 1px solid rgba(138, 43, 226, 0.5) !important;
+}
+
+.btn-purple {
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btn-purple:hover {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
+
+.btn-outline-purple {
+    border-color: rgba(138, 43, 226, 0.6);
+}
+
+.btn-outline-purple:hover {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+/* =========================================================
+   CUSTOM CARD GROUP
+   ========================================================= */
 .custom-card-group {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +389,7 @@ h1, .fs-responsive {
     border-radius: 10px;
     overflow: hidden;
     color: #fff;
-    flex: 1 1 100%; 
+    flex: 1 1 100%;
     display: flex;
     flex-direction: column;
 }
@@ -82,141 +427,9 @@ h1, .fs-responsive {
     }
 }
 
-
-.bg-dark-overlay {
-    background-color: rgba(15, 15, 22, 0.88);
-}
-
-.text-purple {
-    color: #a272ff !important;
-}
-
-.text-pink {
-    color: #ffb6c1 !important;
-}
-
-.border-purple {
-    border: 1px solid rgba(138, 43, 226, 0.5) !important;
-}
-
-.btn-purple {
-    background-color: #8a2be2;
-    color: #ffffff;
-}
-
-.btn-purple:hover {
-    background-color: #ff69b4;
-    color: #ffffff;
-}
-
-.btn-outline-purple {
-    border-color: rgba(138, 43, 226, 0.6);
-}
-
-.btn-outline-purple:hover {
-    background-color: #8a2be2;
-    border-color: #8a2be2;
-}
-
-.bg-dark-purple {
-    background-color: #2b1040;
-}
-
-.logo {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.site-name {
-    color: #8a2be2;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-.profile-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    padding: 2px;
-    object-fit: cover;
-    border: 2px solid #8a2be2;
-}
-
-.carousel-img {
-    height: 400px;
-    object-fit: cover;
-}
-
-.card-poster-img {
-    height: 260px;
-    object-fit: cover;
-}
-
-
-body.oregairu {
-    background-image: url("../src/Oregairu/R.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
-
-body.anime-collections {
-    background-image: url("../src/wall.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
-
-.site-layout {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    grid-template-columns: 240px 1fr; 
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-    .site-layout {
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-        grid-template-columns: 1fr;
-    }
-}
-
-.site-layout .main-header {
-    grid-area: header;
-}
-
-.sidebar {
-    grid-area: sidebar;
-    background-color: rgba(15, 15, 22, 0.92);
-    border-right: 1px solid rgba(138, 43, 226, 0.3);
-}
-
-.main-content {
-    grid-area: main;
-    background-color: rgba(20, 20, 28, 0.75);
-}
-
-.sidebar h3 {
-    color: #a272ff;
-    font-family: Arial, sans-serif;
-}
-
+/* =========================================================
+   IMAGE GALLERY
+   ========================================================= */
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -290,50 +503,458 @@ body.anime-collections {
     background-color: #ff69b4;
 }
 
-body {
-    --theme-surface: rgba(20, 20, 28, 0.9);
-    --theme-main: rgba(20, 20, 28, 0.75);
-    --theme-sidebar: rgba(15, 15, 22, 0.92);
-    --theme-text: #ffffff;
-    --theme-muted: #cccccc;
-    --theme-heading: #a272ff;
-    --theme-pink: #ffb6c1;
-    --theme-border: rgba(138, 43, 226, 0.5);
-    --theme-star-empty: #ffffff;
-    --theme-star-selected: #ffb6c1;
+/* =========================================================
+   CAROUSEL & CARDS (Bootstrap pages)
+   ========================================================= */
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
 }
 
-body.day-theme {
-    --theme-surface: rgba(255, 255, 255, 0.96);
-    --theme-main: rgba(250, 248, 255, 0.94);
-    --theme-sidebar: rgba(245, 240, 255, 0.96);
-    --theme-text: #20202a;
-    --theme-muted: #555566;
-    --theme-heading: #7136b5;
-    --theme-pink: #a72b65;
-    --theme-border: rgba(113, 54, 181, 0.45);
-    --theme-star-empty: #555566;
-    --theme-star-selected: #b83b72;
+.card-poster-img {
+    height: 260px;
+    object-fit: cover;
+}
 
+/* =========================================================
+   SEARCH
+   ========================================================= */
+.search-container {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #1a1a1a;
+    color: #ccc;
+    box-sizing: border-box;
+}
+
+#copy-search {
+    flex-shrink: 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#suggestions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-width: 400px;
+    background-color: #1a1a1a;
+    color: #ccc;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #333;
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(to right, #ca6128, #ff1500);
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+
+/* =========================================================
+   DATE / TIME BLOCK
+   ========================================================= */
+.datetime-block {
+    background-color: #f0f0f0;
+    color: #222;
+    padding: 20px;
+    margin: 20px auto;
+    width: fit-content;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.datetime-block h2 {
+    margin-bottom: 10px;
+}
+
+#datetime {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   STATS COUNTER
+   ========================================================= */
+.stats {
+    text-align: center;
+    padding: 30px;
+}
+
+#manga-counter {
+    font-size: 45px;
+    color: #a855f7;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+}
+
+.about-us {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background: rgb(114, 86, 33);
+    border-radius: 15px;
+}
+
+.about-us h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#timeDisplay,
+.time-greeting {
+    color: #ffb6c1;
+}
+
+body.day-theme #timeDisplay,
+body.day-theme .time-greeting {
+    color: #873b8f;
+}
+
+/* =========================================================
+   THEME TOGGLE BUTTON
+   ========================================================= */
+#themeToggleBtn {
+    color: #ffffff;
+    border: 1px solid #8a2be2;
+}
+
+body.day-theme #themeToggleBtn {
+    color: #332244;
+    border-color: #7136b5;
+}
+
+body.day-theme #themeToggleBtn:hover {
+    background-color: #7136b5;
+    color: #ffffff;
+}
+
+/* =========================================================
+   NOTIFICATION / THEME BUTTON (custom pages)
+   ========================================================= */
+.notification-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #1a1a1a;
+}
+
+.notification-button-text {
+    font-size: 22px;
+    color: white;
+}
+
+/* =========================================================
+   CONTACT BUTTON & POPUP
+   ========================================================= */
+.contact-button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #444;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background-color: white;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+}
+
+.popup-content label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.popup-buttons button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.popup-buttons button[type="submit"] {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 24px 18px;
+    }
+
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    .popup-buttons button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FAQ ACCORDION
+   ========================================================= */
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    color: white;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 18px;
+    background: #252525;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header span {
+    font-size: 22px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+    padding: 0 18px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+/* =========================================================
+   REGISTRATION FORM ERRORS
+   ========================================================= */
+#errors {
+    font-size: 16px;
+    text-align: left;
+    white-space: pre-line;
+    margin-top: 10px;
+}
+
+/* =========================================================
+   STAR RATING
+   ========================================================= */
+.rating-container {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+}
+
+.rating-container p,
+.rating-container small {
     color: var(--theme-text);
 }
 
-body,
-.main-content,
-.sidebar,
-.oregairu-main,
-.custom-card,
-.card,
-.trailer-block,
-.rating-container,
-.navbar,
-.main-footer {
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+#star-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
 }
 
+#star-rating .star {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0 2px;
+    color: var(--theme-star-empty);
+    font-size: 30px;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#star-rating .star.selected {
+    color: var(--theme-star-selected);
+}
+
+#star-rating .star:hover {
+    transform: scale(1.2);
+}
+
+#star-rating .star:focus-visible {
+    outline: 2px solid #a272ff;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   REVIEW MESSAGE
+   ========================================================= */
+.review-message {
+    color: #ffb6c1;
+    font-weight: 500;
+}
+
+body.day-theme .review-message {
+    color: #7136b5;
+}
+
+/* =========================================================
+   JS CARD ANIMATION
+   ========================================================= */
+.js-animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        background-color 0.3s ease;
+}
+
+.js-animated-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   NAVBAR FOCUS STYLES
+   ========================================================= */
+.navbar-nav .nav-link:focus-visible {
+    outline: 2px solid #ffb6c1;
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   DAY THEME OVERRIDES
+   ========================================================= */
 body.day-theme .main-content {
     background-color: var(--theme-main);
     color: var(--theme-text);
@@ -450,109 +1071,6 @@ body.day-theme .oregairu-main .input-group-text {
     color: #332244 !important;
 }
 
-
-.rating-container {
-    background-color: var(--theme-surface);
-    color: var(--theme-text);
-    border: 1px solid var(--theme-border);
-}
-
-.rating-container p,
-.rating-container small {
-    color: var(--theme-text);
-}
-
-#star-rating {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-#star-rating .star {
-    appearance: none;
-    background: transparent;
-    border: none;
-    padding: 0 2px;
-
-    color: var(--theme-star-empty);
-    font-size: 30px;
-    line-height: 1.2;
-    cursor: pointer;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-#star-rating .star.selected {
-    color: var(--theme-star-selected);
-}
-
-#star-rating .star:hover {
-    transform: scale(1.2);
-}
-
-#star-rating .star:focus-visible {
-    outline: 2px solid #a272ff;
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-
-#themeToggleBtn {
-    color: #ffffff;
-    border: 1px solid #8a2be2;
-}
-
-body.day-theme #themeToggleBtn {
-    color: #332244;
-    border-color: #7136b5;
-}
-
-body.day-theme #themeToggleBtn:hover {
-    background-color: #7136b5;
-    color: #ffffff;
-}
-
-#timeDisplay,
-.time-greeting {
-    color: #ffb6c1;
-}
-
-body.day-theme #timeDisplay,
-body.day-theme .time-greeting {
-    color: #873b8f;
-}
-
-.review-message {
-    color: #ffb6c1;
-    font-weight: 500;
-}
-
-body.day-theme .review-message {
-    color: #7136b5;
-}
-
-.js-animated-card {
-    opacity: 0;
-    transform: translateY(20px);
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease,
-        background-color 0.3s ease;
-}
-
-.js-animated-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.gallery-item.is-visible:hover img {
-    transform: scale(1.08);
-}
-
 body.day-theme .gallery-overlay {
     background-color: rgba(20, 20, 28, 0.88);
 }
@@ -565,11 +1083,9 @@ body.day-theme .gallery-overlay p {
     color: #cccccc;
 }
 
-.navbar-nav .nav-link:focus-visible {
-    outline: 2px solid #ffb6c1;
-    outline-offset: 3px;
-}
-
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 @media (prefers-reduced-motion: reduce) {
     .js-animated-card {
         opacity: 1;

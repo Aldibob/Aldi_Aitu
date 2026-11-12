@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anime Website</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-        <script src="script.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Website — Hikikomori.lab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body class="page-shell">
+
     <div id="progress-bar"></div>
 
     <noscript>
@@ -17,7 +16,6 @@
     </noscript>
 
     <header>
-
         <a href="index.html">
             <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo">
             <span class="site-name">Hikikomori.lab</span>
@@ -38,12 +36,12 @@
         <a href="registration.html" class="profile">
             <img src="src/profile_icon.png" alt="Profile" class="logo">
         </a>
-
     </header>
-         <div class="datetime-block">
-            <h2>Current Date and Time</h2>
-            <p id="datetime"></p>
-        </div>
+
+    <div class="datetime-block">
+        <h2>Current Date and Time</h2>
+        <p id="datetime"></p>
+    </div>
 
     <main>
         <div class="search-container">
@@ -51,124 +49,117 @@
                 <input type="text" id="search-bar" placeholder="Search for manga">
                 <button id="copy-search" type="button">Copy</button>
             </div>
-                <div id="suggestions"></div>
+            <div id="suggestions"></div>
         </div>
-        
-       
-<h2 class="responsive-text">Manga Gallery</h2>
-            <div class="image-gallery">
-                <div class="gallery-item" data-genre="Oregairu">
-                    <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
-                    <div class="gallery-overlay">
-                        <h3>Oregairu</h3>
-                        <p>Romantic Comedy</p>
-                        <a href="oregairu.html" class="card-btn">Read</a>
-                    </div>
-                </div>
 
-                <div class="gallery-item" data-genre="Bleach">
-                    <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
-                    <div class="gallery-overlay">
-                        <h3>Bleach</h3>
-                        <p>Action / Supernatural</p>
-                        <a href="Bleach_manga.html" class="card-btn">Read</a>
-                    </div>
-                </div>
+        <h2 class="responsive-text">Manga Gallery</h2>
+        <div class="image-gallery">
 
-                <div class="gallery-item" data-genre="Hunter x Hunter">
-                    <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
-                    <div class="gallery-overlay">
-                        <h3>Hunter x Hunter</h3>
-                        <p>Adventure / Fantasy</p>
-                        <a href="hunter_x_hunter.html" class="card-btn">Read</a>
-                    </div>
+            <div class="gallery-item" data-genre="Oregairu">
+                <img src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
+                <div class="gallery-overlay">
+                    <h3>Oregairu</h3>
+                    <p>Romantic Comedy</p>
+                    <a href="oregairu.html" class="card-btn">Read</a>
                 </div>
+            </div>
 
-                <div class="gallery-item" data-genre="Jujutsu Kaisen">
-                    <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
-                    <div class="gallery-overlay">
-                        <h3>Jujutsu Kaisen</h3>
-                        <p>Dark Fantasy</p>
-                        <a href="Jujutsu_Kaisen_manga.html" class="card-btn">Read</a>
-                    </div>
+            <div class="gallery-item" data-genre="Bleach">
+                <img src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
+                <div class="gallery-overlay">
+                    <h3>Bleach</h3>
+                    <p>Action / Supernatural</p>
+                    <a href="Bleach_manga.html" class="card-btn">Read</a>
                 </div>
+            </div>
 
-                <div class="gallery-item" data-genre="Demon Slayer">
-                    <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
-                    <div class="gallery-overlay">
-                        <h3>Demon Slayer</h3>
-                        <p>Action / Historical</p>
-                        <a href="demon_slayer_manga.html" class="card-btn">Read</a>
-                    </div>
+            <div class="gallery-item" data-genre="Hunter x Hunter">
+                <img src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
+                <div class="gallery-overlay">
+                    <h3>Hunter x Hunter</h3>
+                    <p>Adventure / Fantasy</p>
+                    <a href="hunter_x_hunter.html" class="card-btn">Read</a>
                 </div>
+            </div>
 
-                <div class="gallery-item" data-genre="Kaguya Sama">
-                    <img src="src/kaguya_manga_wallpapper.jpg" alt="Kaguya">
-                    <div class="gallery-overlay">
-                        <h3>Kaguya Sama</h3>
-                        <p>Comedy / Romantic</p>
-                        <a href="kaguya_love_and_war.html" class="card-btn">Read</a>
-                    </div>
+            <div class="gallery-item" data-genre="Jujutsu Kaisen">
+                <img src="src/jujutsu_kaisen_manga/jujutsu_kaisen_1.jpeg" alt="Jujutsu Kaisen">
+                <div class="gallery-overlay">
+                    <h3>Jujutsu Kaisen</h3>
+                    <p>Dark Fantasy</p>
+                    <a href="Jujutsu_Kaisen_manga.html" class="card-btn">Read</a>
                 </div>
+            </div>
 
+            <div class="gallery-item" data-genre="Demon Slayer">
+                <img src="src/animecollections_x_poster/1.webp" alt="Demon Slayer">
+                <div class="gallery-overlay">
+                    <h3>Demon Slayer</h3>
+                    <p>Action / Historical</p>
+                    <a href="demon_slayer_manga.html" class="card-btn">Read</a>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-genre="Kaguya Sama">
+                <img src="src/kaguya_manga_wallpapper.jpg" alt="Kaguya">
+                <div class="gallery-overlay">
+                    <h3>Kaguya Sama</h3>
+                    <p>Comedy / Romantic</p>
+                    <a href="kaguya_love_and_war.html" class="card-btn">Read</a>
+                </div>
+            </div>
+
+        </div>
     </main>
+
     <div class="stats">
         <h2 id="manga-counter" data-target="6">0</h2>
         <h2>Manga Titles</h2>
     </div>
 
-    <footer>   
+    <footer>
         <section class="about-us">
-        <h2>About Us</h2>
-        <p>
-        We are two young frontend developers and anime fans.
-        We created this website to share our passion for anime and manga
-        while improving our web development skills.
-        </p>
-        </section> 
-        <button onclick="background_Color" class="notification-button" id="color-button">
+            <h2>About Us</h2>
+            <p>
+                We are two young frontend developers and anime fans.
+                We created this website to share our passion for anime and manga
+                while improving our web development skills.
+            </p>
+        </section>
+        <button class="notification-button" id="color-button">
             <div class="notification-button-text">Theme</div>
         </button>
     </footer>
 
-    <button id="open-contact" class="contact-button">
-        Contact Us
-    </button>
+    <button id="open-contact" class="contact-button">Contact Us</button>
 
-<div id="contact-popup" class="popup-overlay">
-    <div class="popup-content">
+    <div id="contact-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Contact Us</h2>
+            <p>Have a question or suggestion? Send us a message!</p>
 
-        <h2>Contact Us</h2>
-        <p>Have a question or suggestion? Send us a message!</p>
+            <form id="contact-form" novalidate>
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Nickname">
 
-        <form id="contact-form" novalidate>
-            <label for="contact-name">Your Name</label>
-            <input type="text" id="contact-name"placeholder="Nickname">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" placeholder="example@email.com">
 
-            <label for="contact-email">Your Email</label>
-            <input type="email" id="contact-email" placeholder="example@email.com">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
 
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
+                <p id="contact-status" role="status"></p>
+                <div id="errors-contact"></div>
 
-            <p id="contact-status" role="status"></p>
-
-            <div id="errors-contact"></div>
-
-            <div class="popup-buttons">
-                <button type="button" id="cancel-contact">
-                    Cancel
-                </button>
-                <button type="submit">
-                    Send Message
-                </button>
-            </div>
-        </form>
+                <div class="popup-buttons">
+                    <button type="button" id="cancel-contact">Cancel</button>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>  
 
-        
-
-        <script src="Js/main.js"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="Js/main.js"></script>
+</body>
 </html>

@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/main.css">
-
+    <title>Registration — Hikikomori.lab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
-    <a href="index.html">
+        <a href="index.html">
             <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo">
             <span class="site-name">Hikikomori.lab</span>
         </a>
@@ -31,85 +30,73 @@
         <a href="registration.html" class="profile">
             <img src="src/profile_icon.png" alt="Profile" class="logo">
         </a>
-
-</header>
+    </header>
 
     <main>
         <div class="responsive-title">Registration</div>
+
+        <form novalidate>
+            <div class="input-group mt-3">
+                <input type="text" id="name" class="form-control" placeholder="Nickname">
+            </div>
+
+            <div class="input-group mt-3">
+                <input type="password" id="pass" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="input-group mt-3">
+                <input type="password" id="pass-confirm" class="form-control" placeholder="Confirm password">
+            </div>
+
+            <div class="input-group mt-3">
+                <span class="input-group-text">@</span>
+                <input type="email" id="email" class="form-control" placeholder="Email" inputmode="email">
+            </div>
+
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="agree">
+                <label class="form-check-label" for="agree">I agree with the terms</label>
+            </div>
+
+            <div id="errors"></div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
     </main>
 
     <footer>
-<form novalidate>
-
-    <div class="input-group mt-3">
-        <input type="text" id="name" class="form-control" placeholder="Nickname">
-    </div>
-
-    <div class="input-group mt-3">
-        <input type="password" id="pass" class="form-control" placeholder="Password">
-    </div>
-
-    <div class="input-group mt-3">
-        <input type="password" id="pass-confirm" class="form-control" placeholder="Confirm password">
-    </div>
-
-    <div class="input-group mt-3">
-        <span class="input-group-text">@</span>
-        <input type="email" id="email" class="form-control" placeholder="Email" inputmode="email">
-    </div>
-
-    <div class="form-check mt-2">
-        <input class="form-check-input" type="checkbox" id="agree">
-        <label class="form-check-label" for="agree">
-            I agree with the terms
-        </label>
-    </div>
-
-    <div id="errors"></div>
-
-    <button type="submit" class="btn btn-primary">
-        Submit
-    </button>
-
-</form> 
-        Aldiyar Akhtanov, Aituar Kaliyev
+        <p>Aldiyar Akhtanov, Aituar Kaliyev</p>
     </footer>
-    <button id="open-contact" class="contact-button">
-        Contact Us
-    </button>
 
-<div id="contact-popup" class="popup-overlay">
-    <div class="popup-content">
+    <button id="open-contact" class="contact-button">Contact Us</button>
 
-        <h2>Contact Us</h2>
-        <p>Have a question or suggestion? Send us a message!</p>
+    <div id="contact-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Contact Us</h2>
+            <p>Have a question or suggestion? Send us a message!</p>
 
-        <form id="contact-form" novalidate>
-            <label for="contact-name">Your Name</label>
-            <input type="text" id="contact-name"placeholder="Nickname">
+            <form id="contact-form" novalidate>
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Nickname">
 
-            <label for="contact-email">Your Email</label>
-            <input type="email" id="contact-email" placeholder="example@email.com">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" placeholder="example@email.com">
 
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" rows="4" placeholder="Write your message..."></textarea>
 
-            <p id="contact-status" role="status"></p>
+                <p id="contact-status" role="status"></p>
+                <div id="errors-contact"></div>
 
-            <div id="errors-contact"></div>
-
-            <div class="popup-buttons">
-                <button type="button" id="cancel-contact">
-                    Cancel
-                </button>
-                <button type="submit">
-                    Send Message
-                </button>
-            </div>
-        </form>
+                <div class="popup-buttons">
+                    <button type="button" id="cancel-contact">Cancel</button>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="Js/main.js"></script>
 </body>
 </html>

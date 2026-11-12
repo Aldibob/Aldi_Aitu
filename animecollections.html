@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Collections</title>
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js" defer></script>
-    <script src="Js/script.js" defer></script>
+    <title>Anime Collections — Hikikomori.lab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="anime-collections">
 
     <div class="site-layout">
-        
+
         <header class="main-header p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 px-3 px-sm-4">
                 <div class="container-fluid">
@@ -20,8 +18,10 @@
                         <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo me-2">
                         <span class="site-name">Hikikomori.lab</span>
                     </a>
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollections" aria-controls="navCollections" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navCollections"
+                            aria-controls="navCollections" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -51,7 +51,7 @@
 
         <main class="main-content p-3 p-md-4">
             <h2 class="mb-4">Featured Collections</h2>
-            
+
             <div class="custom-card-group mb-5">
                 <div class="custom-card">
                     <img data-src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
@@ -61,6 +61,7 @@
                         <a href="oregairu.html" class="btn btn-sm btn-purple">Explore</a>
                     </div>
                 </div>
+
                 <div class="custom-card">
                     <img data-src="src/bleach_manga_review/Bleach_image_0.jpg" alt="Bleach">
                     <div class="custom-card-body">
@@ -69,9 +70,10 @@
                         <a href="Bleach_manga.html" class="btn btn-sm btn-purple">Explore</a>
                     </div>
                 </div>
+
                 <div class="custom-card">
                     <img data-src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
-                    <div class="custom-card-body" id="ard">
+                    <div class="custom-card-body">
                         <h4>Hunter x Hunter</h4>
                         <p>Adventure / Fantasy</p>
                         <a href="hunter_x_hunter.html" class="btn btn-sm btn-purple">Explore</a>
@@ -81,6 +83,7 @@
 
             <h2>Anime Gallery</h2>
             <div class="image-gallery">
+
                 <div class="gallery-item">
                     <img data-src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
                     <div class="gallery-overlay">
@@ -99,10 +102,10 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" id="hunter">
+                <div class="gallery-item">
                     <img data-src="src/hunter_x_hunter_manga/hunter_x_hunter.jpg" alt="Hunter x Hunter">
                     <div class="gallery-overlay">
-                        <h3 id="gay">Hunter x Hunter</h3>
+                        <h3>Hunter x Hunter</h3>
                         <p>Adventure / Fantasy</p>
                         <a href="hunter_x_hunter.html" class="card-btn">View Details</a>
                     </div>
@@ -161,6 +164,7 @@
                         <a href="#" class="card-btn">View Details</a>
                     </div>
                 </div>
+
             </div>
         </main>
 
@@ -169,6 +173,9 @@
         </footer>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Js/main.js" defer></script>
 </body>
 </html>
