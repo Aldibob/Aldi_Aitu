@@ -9,30 +9,33 @@
 
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo">
-            <span class="site-name">Hikikomori.lab</span>
-        </a>
+        <header class="main-header p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 px-sm-4">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand logo-container d-flex align-items-center me-4">
+                    <img src="src/logo_for_homepage.png" alt="Hikikomori Logo" class="logo me-2">
+                    <span class="site-name">Hikikomori.lab</span>
+                </a>
 
-        <button class="burger" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <nav class="nav-menu" id="nav-menu">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="animecollections.html" class="nav-link">Anime</a>
-            <a href="FAQs_page.html" class="nav-link">FAQs</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
+                        <li class="nav-item"><a href="index.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Home</a></li>
+                        <li class="nav-item"><a href="animecollections.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">Anime Collections</a></li>
+                        <li class="nav-item"><a href="FAQs_page.html" class="nav-link btn btn-outline-purple text-white px-3 mt-1 mt-lg-0">FAQ</a></li>
+                    </ul>
+                    <a href="registration.html" class="profile d-inline-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+                        <img src="src/profile.webp" alt="Profile" class="profile-icon">
+                    </a>
+                </div>
+            </div>
         </nav>
-
-        <a href="registration.html" class="profile">
-            <img src="src/profile_icon.png" alt="Profile" class="logo">
-        </a>
-
-</header>
-
+    </header>
     <main>
         <div class="manga-reader">
             <img src="src/hunter_x_hunter_manga/hunter_x_hunter_1.jpg">
