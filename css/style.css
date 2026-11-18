@@ -1064,3 +1064,80 @@ body:not(.day-theme) .oregairu-main[style*="background-color"] .lead,
 body:not(.day-theme) .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
     color: #f3e8ff !important;
 }
+.site-layout .main-footer {
+    grid-area: footer;
+}
+
+.site-layout h2,
+.site-layout h3,
+.site-layout p {
+    color: var(--theme-text);
+}
+
+body:not(.day-theme) .site-layout h2 {
+    color: #f3e8ff !important;
+}
+
+.sidebar {
+    background-color: var(--theme-surface, rgba(24, 20, 37, 0.95)) !important;
+    border-right: 1px solid var(--theme-border, rgba(168, 85, 247, 0.3));
+    padding: 24px 20px !important; 
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--theme-heading, #c084fc);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px !important; 
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.sidebar ul.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                  
+    padding-left: 0;
+    list-style: none;
+    margin-top: 10px;           
+}
+
+.sidebar ul.nav a {
+    color: var(--theme-text, #f3e8ff) !important;
+    background-color: rgba(168, 85, 247, 0.08);
+    padding: 12px 16px !important; 
+    border-radius: 8px;
+    font-weight: 500;
+    display: block;
+    text-decoration: none !important;
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.sidebar ul.nav a:hover {
+    background-color: rgba(168, 85, 247, 0.25);
+    color: #ffffff !important;
+    transform: translateX(6px); 
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+}
+
+.custom-card-group .custom-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--theme-surface, rgba(24, 20, 37, 0.92));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.custom-card-group .custom-card img {
+    width: 100%;
+    height: auto !important;     
+    max-height: 450px;          
+    object-fit: cover !important;
+    object-position: center top; 
+}
