@@ -857,6 +857,53 @@ if (typeof $ !== "undefined") {
                 navLinks[next].focus();
             });
         }
+        
+$(document).ready(function() {
+    console.log("API Script Loaded Successfully!");
 
-    }); // end $(document).ready
+    $("#fetch-anime-btn").on("click", async function() {
+        console.log("Button clicked, fetching anime...");
+        
+        const $loading = $("#api-loading");
+        const $result = $("#api-result");
+        const $error = $("#api-error");
+
+        $result.addClass("d-none");
+        $error.addClass("d-none");
+        $loading.removeClass("d-none");
+
+        try {
+            const response = await fetch("https://api.jikan.moe/v4/random/anime");
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const anime = data.data;
+
+            if (!anime) {
+                throw new Error("Empty data received from API");
+            }
+
+            console.log("Anime fetched:", anime.title);
+
+            $("#api-anime-img").attr("src", anime.images?.jpg?.image_url || "");
+            $("#api-anime-title").text(anime.title_english || anime.title || "Unknown Title");
+            $("#api-anime-score").text(anime.score || "N/A");
+            $("#api-anime-episodes").text(anime.episodes || "Unknown");
+            $("#api-anime-synopsis").text(anime.synopsis || "No description available.");
+            $("#api-anime-link").attr("href", anime.url || "#");
+
+            $loading.addClass("d-none");
+            $result.removeClass("d-none");
+
+        } catch (err) {
+            console.error("API Fetch Error:", err);
+            $loading.addClass("d-none");
+            $error.removeClass("d-none");
+        }
+    });
+});
+    });
 }

@@ -83,7 +83,7 @@
             </div>
 
             <h2>Anime Gallery</h2>
-            <div class="image-gallery">
+            <div class="image-gallery mb-5">
 
                 <div class="gallery-item">
                     <img data-src="src/animecollections_x_poster/poster_oregairu.webp" alt="Oregairu">
@@ -167,6 +167,41 @@
                 </div>
 
             </div>
+
+            <!-- БЛОК API ТЕПЕРЬ ВНУТРИ MAIN (ПОД ГАЛЕРЕЕЙ) -->
+            <section class="api-anime-section container-fluid my-4 p-4 rounded bg-dark-overlay border border-purple">
+                <h2 class="text-center text-purple mb-3">🎲 Random Anime Recommendation (Jikan API)</h2>
+                <p class="text-center text-muted mb-4">Click the button below to fetch live anime data from MyAnimeList!</p>
+                
+                <div class="text-center mb-4">
+                    <button id="fetch-anime-btn" class="btn btn-purple px-4 py-2 fw-bold">Get Random Anime</button>
+                </div>
+
+                <div id="api-loading" class="text-center text-light d-none">
+                    <div class="spinner-border text-purple" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Fetching data from API...</p>
+                </div>
+
+                <div id="api-result" class="row align-items-center d-none">
+                    <div class="col-md-4 text-center mb-3 mb-md-0">
+                        <img id="api-anime-img" src="" alt="Anime Poster" class="img-fluid rounded shadow" style="max-height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-8 text-light">
+                        <h3 id="api-anime-title" class="text-pink"></h3>
+                        <p><strong>Score:</strong> <span id="api-anime-score"></span> ⭐</p>
+                        <p><strong>Episodes:</strong> <span id="api-anime-episodes"></span></p>
+                        <p id="api-anime-synopsis" class="small text-muted" style="max-height: 120px; overflow-y: auto;"></p>
+                        <a id="api-anime-link" href="#" target="_blank" class="btn btn-sm btn-outline-light mt-2">View on MyAnimeList</a>
+                    </div>
+                </div>
+
+                <div id="api-error" class="alert alert-danger text-center d-none mt-3" role="alert">
+                    Failed to fetch data from the API. Please check your internet connection and try again!
+                </div>
+            </section>
+
         </main>
 
         <footer class="main-footer bg-dark text-light text-center py-3 border-top border-secondary">
