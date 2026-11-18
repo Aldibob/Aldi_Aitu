@@ -1,6 +1,3 @@
-/* =========================================================
-   RESET & BASE
-   ========================================================= */
 *,
 *::before,
 *::after {
@@ -31,9 +28,6 @@ h2 {
     padding: 15px;
 }
 
-/* =========================================================
-   RESPONSIVE TYPOGRAPHY
-   ========================================================= */
 h1,
 .fs-responsive {
     font-size: 1.5rem;
@@ -91,9 +85,6 @@ h1,
     }
 }
 
-/* =========================================================
-   CSS CUSTOM PROPERTIES (THEME)
-   ========================================================= */
 body {
     --theme-surface:       rgba(20, 20, 28, 0.9);
     --theme-main:          rgba(20, 20, 28, 0.75);
@@ -121,9 +112,6 @@ body.day-theme {
     color: var(--theme-text);
 }
 
-/* =========================================================
-   THEME TRANSITIONS
-   ========================================================= */
 body,
 .main-content,
 .sidebar,
@@ -140,9 +128,6 @@ body,
         border-color 0.3s ease;
 }
 
-/* =========================================================
-   PAGE BACKGROUNDS
-   ========================================================= */
 body.page-shell {
     background-image:
         url('../src/wallpappers/hunter_x_hunter_wallpaper_1.png'),
@@ -171,9 +156,6 @@ body.anime-collections {
     min-height: 100vh;
 }
 
-/* =========================================================
-   HEADER & NAVIGATION (custom, non-Bootstrap pages)
-   ========================================================= */
 header {
     background-color: #3f3e3e;
     display: flex;
@@ -267,9 +249,6 @@ header {
     }
 }
 
-/* =========================================================
-   HEADER & NAVIGATION (Bootstrap pages)
-   ========================================================= */
 .logo {
     width: 45px;
     height: 45px;
@@ -287,9 +266,6 @@ header {
     border: 2px solid #8a2be2;
 }
 
-/* =========================================================
-   SITE LAYOUT (Bootstrap pages grid)
-   ========================================================= */
 .site-layout {
     display: grid;
     grid-template-areas:
@@ -332,9 +308,6 @@ header {
     background-color: rgba(20, 20, 28, 0.75);
 }
 
-/* =========================================================
-   UTILITY CLASSES
-   ========================================================= */
 .bg-dark-overlay {
     background-color: rgba(15, 15, 22, 0.88);
 }
@@ -374,9 +347,6 @@ header {
     border-color: #8a2be2;
 }
 
-/* =========================================================
-   CUSTOM CARD GROUP
-   ========================================================= */
 .custom-card-group {
     display: flex;
     flex-wrap: wrap;
@@ -427,9 +397,6 @@ header {
     }
 }
 
-/* =========================================================
-   IMAGE GALLERY
-   ========================================================= */
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -503,9 +470,6 @@ header {
     background-color: #ff69b4;
 }
 
-/* =========================================================
-   CAROUSEL & CARDS (Bootstrap pages)
-   ========================================================= */
 .carousel-img {
     height: 400px;
     object-fit: cover;
@@ -516,9 +480,6 @@ header {
     object-fit: cover;
 }
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
 .search-container {
     position: relative;
     width: 80%;
@@ -581,9 +542,6 @@ header {
     border-radius: 3px;
 }
 
-/* =========================================================
-   PROGRESS BAR
-   ========================================================= */
 #progress-bar {
     position: fixed;
     top: 0;
@@ -595,9 +553,6 @@ header {
     transition: width 0.1s linear;
 }
 
-/* =========================================================
-   DATE / TIME BLOCK
-   ========================================================= */
 .datetime-block {
     background-color: #f0f0f0;
     color: #222;
@@ -617,9 +572,6 @@ header {
     font-weight: bold;
 }
 
-/* =========================================================
-   STATS COUNTER
-   ========================================================= */
 .stats {
     text-align: center;
     padding: 30px;
@@ -630,9 +582,6 @@ header {
     color: #a855f7;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
 footer {
     display: flex;
     justify-content: center;
@@ -671,9 +620,6 @@ body.day-theme .time-greeting {
     color: #873b8f;
 }
 
-/* =========================================================
-   THEME TOGGLE BUTTON
-   ========================================================= */
 #themeToggleBtn {
     color: #ffffff;
     border: 1px solid #8a2be2;
@@ -689,9 +635,6 @@ body.day-theme #themeToggleBtn:hover {
     color: #ffffff;
 }
 
-/* =========================================================
-   NOTIFICATION / THEME BUTTON (custom pages)
-   ========================================================= */
 .notification-button {
     display: flex;
     align-items: center;
@@ -708,9 +651,6 @@ body.day-theme #themeToggleBtn:hover {
     color: white;
 }
 
-/* =========================================================
-   CONTACT BUTTON & POPUP
-   ========================================================= */
 .contact-button {
     padding: 10px 20px;
     background-color: #1a1a1a;
@@ -799,9 +739,6 @@ body.day-theme #themeToggleBtn:hover {
     }
 }
 
-/* =========================================================
-   FAQ ACCORDION
-   ========================================================= */
 .faq-section {
     max-width: 800px;
     margin: 50px auto;
@@ -856,9 +793,6 @@ body.day-theme #themeToggleBtn:hover {
     max-height: 300px;
 }
 
-/* =========================================================
-   REGISTRATION FORM ERRORS
-   ========================================================= */
 #errors {
     font-size: 16px;
     text-align: left;
@@ -866,9 +800,6 @@ body.day-theme #themeToggleBtn:hover {
     margin-top: 10px;
 }
 
-/* =========================================================
-   STAR RATING
-   ========================================================= */
 .rating-container {
     background-color: var(--theme-surface);
     color: var(--theme-text);
@@ -915,9 +846,6 @@ body.day-theme #themeToggleBtn:hover {
     border-radius: 4px;
 }
 
-/* =========================================================
-   REVIEW MESSAGE
-   ========================================================= */
 .review-message {
     color: #ffb6c1;
     font-weight: 500;
@@ -927,9 +855,6 @@ body.day-theme .review-message {
     color: #7136b5;
 }
 
-/* =========================================================
-   JS CARD ANIMATION
-   ========================================================= */
 .js-animated-card {
     opacity: 0;
     transform: translateY(20px);
@@ -944,17 +869,11 @@ body.day-theme .review-message {
     transform: translateY(0);
 }
 
-/* =========================================================
-   NAVBAR FOCUS STYLES
-   ========================================================= */
 .navbar-nav .nav-link:focus-visible {
     outline: 2px solid #ffb6c1;
     outline-offset: 3px;
 }
 
-/* =========================================================
-   DAY THEME OVERRIDES
-   ========================================================= */
 body.day-theme .main-content {
     background-color: var(--theme-main);
     color: var(--theme-text);
@@ -975,7 +894,7 @@ body.day-theme .sidebar a.text-light {
 }
 
 body.day-theme .oregairu-main {
-    background-color: var(--theme-main) !important;
+    background-color: var(--theme-main);
     color: var(--theme-text);
 }
 
@@ -1083,9 +1002,48 @@ body.day-theme .gallery-overlay p {
     color: #cccccc;
 }
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+body.day-theme #changeColorBtn {
+    color: #080808 !important;
+    border-color: #7136b5 !important;
+}
+
+body.day-theme #changeColorBtn:hover {
+    background-color: #7136b5 !important;
+    color: #ffffff !important;
+}
+
+body.day-theme .oregairu-main .form-control.bg-secondary,
+body.day-theme .oregairu-main .form-control.text-white {
+    background-color: #ffffff !important;
+    color: #20202a !important;
+    border: 1px solid #c5b6d8 !important;
+}
+
+body.day-theme .oregairu-main .form-control::placeholder {
+    color: #777080 !important;
+    opacity: 1;
+}
+
+body.day-theme .navbar .nav-link.btn-outline-purple,
+body.day-theme .navbar .btn-outline-purple {
+    border-color: #7136b5 !important;
+    color: #332244 !important;
+}
+
+body.day-theme .navbar .nav-link.btn-outline-purple:hover,
+body.day-theme .navbar .btn-outline-purple:hover {
+    background-color: #7136b5 !important;
+    color: #ffffff !important;
+}
+
+body.day-theme .navbar .nav-link.btn-purple,
+body.day-theme .navbar .btn-purple,
+body.day-theme .navbar .nav-link.active {
+    background-color: #7136b5 !important;
+    color: #ffffff !important;
+    border-color: #7136b5 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .js-animated-card {
         opacity: 1;
@@ -1097,6 +1055,7 @@ body.day-theme .gallery-overlay p {
         transition: none;
     }
 }
+<<<<<<< HEAD
 
 form {
     max-width: 400px;
@@ -1174,3 +1133,91 @@ form {
         grid-template-columns: 1fr;
     }
 }
+=======
+body.day-theme .oregairu-main[style*="background-color"] .lead,
+body.day-theme .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
+    color: #2e1065 !important;
+}
+
+body:not(.day-theme) .oregairu-main[style*="background-color"] .lead,
+body:not(.day-theme) .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
+    color: #f3e8ff !important;
+}
+.site-layout .main-footer {
+    grid-area: footer;
+}
+
+.site-layout h2,
+.site-layout h3,
+.site-layout p {
+    color: var(--theme-text);
+}
+
+body:not(.day-theme) .site-layout h2 {
+    color: #f3e8ff !important;
+}
+
+.sidebar {
+    background-color: var(--theme-surface, rgba(24, 20, 37, 0.95)) !important;
+    border-right: 1px solid var(--theme-border, rgba(168, 85, 247, 0.3));
+    padding: 24px 20px !important; 
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--theme-heading, #c084fc);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px !important; 
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.sidebar ul.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                  
+    padding-left: 0;
+    list-style: none;
+    margin-top: 10px;           
+}
+
+.sidebar ul.nav a {
+    color: var(--theme-text, #f3e8ff) !important;
+    background-color: rgba(168, 85, 247, 0.08);
+    padding: 12px 16px !important; 
+    border-radius: 8px;
+    font-weight: 500;
+    display: block;
+    text-decoration: none !important;
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    transition: all 0.25s ease-in-out;
+}
+
+.sidebar ul.nav a:hover {
+    background-color: rgba(168, 85, 247, 0.25);
+    color: #ffffff !important;
+    transform: translateX(6px); 
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+}
+
+.custom-card-group .custom-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--theme-surface, rgba(24, 20, 37, 0.92));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.custom-card-group .custom-card img {
+    width: 100%;
+    height: auto !important;     
+    max-height: 450px;          
+    object-fit: cover !important;
+    object-position: center top; 
+}
+>>>>>>> c9c32890a0f5d51c1047015ef48db59396f6aadb
