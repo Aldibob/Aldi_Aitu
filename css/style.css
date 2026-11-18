@@ -1055,6 +1055,28 @@ body.day-theme .navbar .nav-link.active {
         transition: none;
     }
 }
+
+form {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#JujutsuCarousel {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.manga-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
 body.day-theme .oregairu-main[style*="background-color"] .lead,
 body.day-theme .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
     color: #2e1065 !important;
