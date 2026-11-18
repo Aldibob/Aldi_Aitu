@@ -195,7 +195,7 @@ header {
 }
 
 .site-name {
-    color: #ff6500;
+    color: #a272ff;
     font-size: 35px;
     font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
@@ -220,7 +220,7 @@ header {
 }
 
 .nav-link:hover {
-    color: #ff6500;
+    color: #a272ff;
 }
 
 .burger {
