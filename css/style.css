@@ -1164,12 +1164,11 @@ body:not(.day-theme) .site-layout h2 {
     object-position: center top; 
 }
 
-/* Подзаголовок в темной теме */
 .anime-api-section .api-subtitle {
-    color: #cbd5e1; /* Светло-серый, отлично читается на темном фоне */
+    color: #cbd5e1;
 }
 
-/* Адаптация блока под Day Mode (дневную тему) */
+
 body.day-theme .anime-api-section {
     background: #ffffff;
     border: 1px solid rgba(168, 85, 247, 0.25);
