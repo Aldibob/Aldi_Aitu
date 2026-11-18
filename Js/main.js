@@ -710,7 +710,7 @@ $(document).ready(function() {
         let animeData = null;
 
         try {
-            // Пытаемся получить данные из официального Jikan API
+        
             const response = await fetch("https://api.jikan.moe/v4/random/anime", {
                 method: "GET",
                 headers: { "Accept": "application/json" }
@@ -735,7 +735,7 @@ $(document).ready(function() {
             console.warn("API Fetch failed, switching to backup data:", err);
         }
 
-        // Если API не ответил (нет интернета / лимит), используем запасной объект, чтобы кнопка ВСЕГДА работала!
+    
         if (!animeData) {
             animeData = {
                 title: "Cyberpunk: Edgerunners",
