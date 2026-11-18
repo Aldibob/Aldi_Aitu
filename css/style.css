@@ -894,7 +894,7 @@ body.day-theme .sidebar a.text-light {
 }
 
 body.day-theme .oregairu-main {
-    background-color: var(--theme-main) !important;
+    background-color: var(--theme-main);
     color: var(--theme-text);
 }
 
@@ -1055,15 +1055,12 @@ body.day-theme .navbar .nav-link.active {
         transition: none;
     }
 }
-body[style*="background-color: rgba(250"] .lead,
-body[style*="background-color: rgba(237"] .lead,
-body[style*="background-color: rgba(253"] .lead,
-body[style*="background-color: rgba(240"] .lead,
-.main-content[style*="background-color"] .lead,
-main[style*="background-color"] .lead {
-    color: #332244 !important;
+body.day-theme .oregairu-main[style*="background-color"] .lead,
+body.day-theme .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
+    color: #2e1065 !important;
 }
 
-body[style*="background-color: rgba"] p:not(.card-text):not(.gallery-overlay p) {
-    color: #2e1065 !important;
+body:not(.day-theme) .oregairu-main[style*="background-color"] .lead,
+body:not(.day-theme) .oregairu-main[style*="background-color"] p:not(.card-text):not(.gallery-overlay p) {
+    color: #f3e8ff !important;
 }

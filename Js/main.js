@@ -426,9 +426,10 @@ if (typeof $ !== "undefined") {
                 </li>
             `);
 
+            
             const $themeBtn = $("#themeToggleBtn");
 
-            // Restore saved theme
+            
             try {
                 if (localStorage.getItem("hikikomori-theme") === "day") {
                     document.body.classList.add("day-theme");
@@ -442,6 +443,11 @@ if (typeof $ !== "undefined") {
                 playClickSound();
                 const isDay = document.body.classList.toggle("day-theme");
                 $themeBtn.text(isDay ? "🌙 Night Mode" : "☀️ Day Mode");
+                
+                const $targetBlock = $("body.oregairu").length ? $(".oregairu-main") : $(".main-content, main").first();
+                $targetBlock.css("background-color", "");
+                colorIdx = 0; 
+
                 try {
                     localStorage.setItem("hikikomori-theme", isDay ? "day" : "night");
                 } catch (e) {
@@ -449,26 +455,41 @@ if (typeof $ !== "undefined") {
                 }
             });
 
-            // Change-theme colour button (next to brand)
             const $brand = $(".navbar-brand");
-            if ($brand.length) {
-                const $colorBtn = $(`<button id="changeColorBtn" class="btn btn-sm btn-outline-purple text-white ms-3" type="button">🎨 Change Theme</button>`);
-                $brand.after($colorBtn);
+        if ($brand.length) {
+            const $colorBtn = $(`<button id="changeColorBtn" class="btn btn-sm btn-outline-purple text-white ms-3" type="button">🎨 Change Theme</button>`);
+            $brand.after($colorBtn);
 
-                const bgColors = [
-                    "rgba(250, 248, 255, 0.95)", 
-                    "rgba(237, 233, 254, 0.95)", 
-                    "rgba(253, 242, 248, 0.95)", 
-                    "rgba(240, 249, 255, 0.95)"
-                ];
-                let colorIdx = 0;
+            // Раздельные палитры для дневного и ночного режима
+            const dayColors = [
+                "rgba(250, 248, 255, 0.95)", // Молочно-лавандовый
+                "rgba(237, 233, 254, 0.95)", // Пастельно-фиолетовый
+                "rgba(253, 242, 248, 0.95)", // Пудрово-розовый
+                "rgba(240, 249, 255, 0.95)"  // Светло-голубой
+            ];
 
-                $colorBtn.on("click", () => {
-                    playClickSound();
-                    colorIdx = (colorIdx + 1) % bgColors.length;
-                    const $main = $(".main-content, main").first();
-                    ($main.length ? $main : $("body")).css("background-color", bgColors[colorIdx]);
-                });
+            const nightColors = [
+                "rgba(24, 20, 37, 0.92)",    // Глубокий темно-фиолетовый
+                "rgba(30, 27, 46, 0.92)",    // Темный чернично-синий
+                "rgba(39, 24, 42, 0.92)",    // Темный бордово-фиолетовый
+                "rgba(20, 24, 38, 0.92)"     // Темный серо-синий
+            ];
+
+            let colorIdx = 0;
+
+            $colorBtn.on("click", () => {
+                playClickSound();
+                
+                // Проверяем, включен ли сейчас Day Mode
+                const isDay = document.body.classList.contains("day-theme");
+                const currentPalette = isDay ? dayColors : nightColors;
+
+                colorIdx = (colorIdx + 1) % currentPalette.length;
+
+                // Применяем цвет к нужному блоку в зависимости от страницы
+                const $targetBlock = $("body.oregairu").length ? $(".oregairu-main") : $(".main-content, main").first();
+                ($targetBlock.length ? $targetBlock : $("body")).css("background-color", currentPalette[colorIdx]);
+            });
             }
         }
 
