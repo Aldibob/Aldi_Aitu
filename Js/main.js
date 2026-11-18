@@ -747,7 +747,6 @@ $(document).ready(function() {
             };
         }
 
-        // Заполняем интерфейс данными
         $("#api-anime-img").attr("src", animeData.image);
         $("#api-anime-title").text(animeData.title);
         $("#api-anime-score").text(animeData.score);
@@ -755,7 +754,6 @@ $(document).ready(function() {
         $("#api-anime-synopsis").text(animeData.synopsis);
         $("#api-anime-link").attr("href", animeData.url);
 
-        // Показываем результат
         $loading.addClass("d-none");
         $result.removeClass("d-none");
     });
