@@ -654,171 +654,6 @@ if (typeof $ !== "undefined") {
             }
         }
 
-        // ----- Anime Collections gallery search (animecollections.html) -----
-        const $gallery    = $(".image-gallery");
-        const $galleryItems = $gallery.find(".gallery-item");
-
-        if ($gallery.length && $galleryItems.length) {
-
-            const $searchContainer = $(`
-                <div class="anime-search-container my-4">
-                    <label for="animeSearch" class="form-label">Search anime:</label>
-                    <input type="text" id="animeSearch" class="form-control"
-                           placeholder="Type an anime name..." autocomplete="off">
-                    <ul id="animeSuggestions" class="list-group mt-1" style="display:none;"></ul>
-                    <p id="searchResult" class="small mt-2" aria-live="polite"></p>
-                </div>
-            `);
-
-            $gallery.before($searchContainer);
-
-            const $animeInput  = $("#animeSearch");
-            const $animeSuggest = $("#animeSuggestions");
-            const $searchResult = $("#searchResult");
-            const animeTitles  = [];
-
-            $galleryItems.each(function () {
-                const title = ($(this).find("h1,h2,h3,h4,h5,.card-title").first().text().trim()
-                            || $(this).find("img").first().attr("alt") || "");
-                if (title && !animeTitles.includes(title)) animeTitles.push(title);
-            });
-
-            function removeHighlights() {
-                $galleryItems.find("mark.search-highlight").each(function () {
-                    $(this).replaceWith(document.createTextNode($(this).text()));
-                });
-            }
-
-            function highlightText(element, query) {
-                if (!query) return;
-                const walker = document.createTreeWalker(
-                    element, NodeFilter.SHOW_TEXT,
-                    {
-                        acceptNode(node) {
-                            const p = node.parentElement;
-                            if (!p || ["SCRIPT", "STYLE", "MARK"].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
-                            return node.textContent.toLowerCase().includes(query.toLowerCase())
-                                ? NodeFilter.FILTER_ACCEPT
-                                : NodeFilter.FILTER_REJECT;
-                        }
-                    }
-                );
-
-                const nodes = [];
-                while (walker.nextNode()) nodes.push(walker.currentNode);
-
-                nodes.forEach((node) => {
-                    const text  = node.textContent;
-                    const idx   = text.toLowerCase().indexOf(query.toLowerCase());
-                    if (idx === -1) return;
-
-                    const frag = document.createDocumentFragment();
-                    frag.appendChild(document.createTextNode(text.substring(0, idx)));
-                    const mark = document.createElement("mark");
-                    mark.className = "search-highlight";
-                    mark.textContent = text.substring(idx, idx + query.length);
-                    frag.appendChild(mark);
-                    frag.appendChild(document.createTextNode(text.substring(idx + query.length)));
-                    node.parentNode.replaceChild(frag, node);
-                });
-            }
-
-            function filterAnime(query) {
-                removeHighlights();
-                let visible = 0;
-
-                $galleryItems.each(function () {
-                    const matches =
-                        $(this).text().toLowerCase().includes(query.toLowerCase()) ||
-                        ($(this).find("img").first().attr("alt") || "").toLowerCase().includes(query.toLowerCase());
-
-                    $(this).toggle(matches);
-                    if (matches) { visible++; highlightText(this, query); }
-                });
-
-                $searchResult.text(query.trim() ? `${visible} anime result(s) found.` : "");
-            }
-
-            $animeInput.on("input", function () {
-                const query = $(this).val().trim();
-                filterAnime(query);
-
-                $animeSuggest.empty();
-                if (!query) { $animeSuggest.hide(); return; }
-
-                const matches = animeTitles.filter((t) => t.toLowerCase().includes(query.toLowerCase()));
-
-                matches.forEach((t) => {
-                    $("<li>").addClass("list-group-item list-group-item-action")
-                             .text(t).css("cursor", "pointer")
-                             .on("click", () => {
-                                 $animeInput.val(t);
-                                 filterAnime(t);
-                                 $animeSuggest.hide();
-                             })
-                             .appendTo($animeSuggest);
-                });
-
-                matches.length ? $animeSuggest.show() : $animeSuggest.hide();
-            });
-
-            $(document).on("click", (e) => {
-                if (!$(e.target).closest(".anime-search-container").length) {
-                    $animeSuggest.hide();
-                }
-            });
-        }
-
-        // ----- Stats counters (animecollections.html) -----
-        if ($(".image-gallery").length) {
-            const galleryCount  = $(".image-gallery .gallery-item").length;
-            const featuredCount = $(".custom-card-group .custom-card").length;
-
-            const $statsSection = $(`
-                <div class="anime-stats row text-center my-4">
-                    <div class="col-6 col-md-3 mb-3">
-                        <div class="p-3 rounded">
-                            <h3 class="counter" data-target="${galleryCount}">0</h3>
-                            <p>Gallery Anime</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 mb-3">
-                        <div class="p-3 rounded">
-                            <h3 class="counter" data-target="${featuredCount}">0</h3>
-                            <p>Featured Anime</p>
-                        </div>
-                    </div>
-                </div>
-            `);
-
-            $(".image-gallery").before($statsSection);
-
-            let counterStarted = false;
-
-            function startCounters() {
-                if (counterStarted) return;
-                if ($(window).scrollTop() + $(window).height() > $statsSection.offset().top) {
-                    counterStarted = true;
-                    $(".counter").each(function () {
-                        const $c   = $(this);
-                        const tgt  = Number($c.attr("data-target"));
-                        $({ value: 0 }).animate(
-                            { value: tgt },
-                            {
-                                duration: 1500,
-                                easing: "swing",
-                                step()   { $c.text(Math.floor(this.value)); },
-                                complete() { $c.text(tgt); }
-                            }
-                        );
-                    });
-                }
-            }
-
-            $(window).on("scroll", startCounters);
-            startCounters();
-        }
-
         // ----- Keyboard navigation for Bootstrap navbar -----
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
         if (navLinks.length > 0) {
@@ -840,3 +675,77 @@ if (typeof $ !== "undefined") {
 
     }); // end $(document).ready
 }
+
+// ===== ANIME NEWS NETWORK API =====
+
+const animeContainer = document.getElementById("anime-container");
+
+async function loadAnime() {
+    if (!animeContainer) return;
+
+    try {
+        const response = await fetch(
+            "https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=~Demon%20Slayer"
+        );
+
+        if (!response.ok) {
+            throw new Error("API request failed");
+        }
+
+        const xmlText = await response.text();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "text/xml");
+
+        const anime = xml.querySelector("anime");
+
+        if (!anime) {
+            throw new Error("Anime not found");
+        }
+
+        const title = anime.getAttribute("name");
+        const animeId = anime.getAttribute("id");
+
+        const picture = anime.querySelector(
+            'info[type="Picture"]'
+        )?.getAttribute("src");
+
+        const genres = Array.from(
+            anime.querySelectorAll('info[type="Genres"]')
+        ).map(item => item.textContent.trim());
+
+        // Create card using existing CSS classes
+        const card = document.createElement("div");
+        card.classList.add("gallery-item");
+        card.dataset.genre = title;
+
+        const image = document.createElement("img");
+        image.src = picture || "src/placeholder.jpg";
+        image.alt = title;
+
+        const overlay = document.createElement("div");
+        overlay.classList.add("gallery-overlay");
+
+        const heading = document.createElement("h3");
+        heading.textContent = title;
+
+        const description = document.createElement("p");
+        description.textContent = genres.join(" / ") || "Anime";
+
+        const link = document.createElement("a");
+        link.href = `https://www.animenewsnetwork.com/encyclopedia/anime.php?id=${animeId}`;
+        link.classList.add("card-btn");
+        link.textContent = "Details";
+        link.target = "_blank";
+
+        overlay.append(heading, description, link);
+        card.append(image, overlay);
+
+        animeContainer.appendChild(card);
+
+    } catch (error) {
+        console.error("ANN API Error:", error);
+    }
+}
+
+loadAnime();

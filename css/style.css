@@ -1097,3 +1097,80 @@ body.day-theme .gallery-overlay p {
         transition: none;
     }
 }
+
+form {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#JujutsuCarousel {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.manga-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+
+.trending-section {
+    padding: 40px 5%;
+}
+
+.trending-section h2 {
+    margin-bottom: 25px;
+}
+
+#anime-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.anime-card {
+    background: #222;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.anime-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.anime-card h3 {
+    margin-top: 12px;
+    font-size: 17px;
+}
+
+.anime-card p {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #anime-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #anime-container {
+        grid-template-columns: 1fr;
+    }
+}
