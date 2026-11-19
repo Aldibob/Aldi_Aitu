@@ -557,7 +557,7 @@ header {
     background-color: #f0f0f0;
     color: #222;
     padding: 20px;
-    margin: 20px auto;
+    margin: 90px auto 20px;
     width: fit-content;
     border-radius: 10px;
     text-align: center;
@@ -565,6 +565,7 @@ header {
 
 .datetime-block h2 {
     margin-bottom: 10px;
+    color: #a272ff;
 }
 
 #datetime {
