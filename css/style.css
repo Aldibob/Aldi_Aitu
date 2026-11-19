@@ -1193,3 +1193,7 @@ body.day-theme #api-anime-synopsis {
 body.day-theme #api-anime-link {
     color: #7e22ce !important;
 }
+.navbar .nav-link,
+.navbar .btn {
+    white-space: nowrap;
+}
